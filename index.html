@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>東京大学運動会ラグビー部</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: 105年続く大学ラグビー部の公式サイト。誠実で力強く，学生の日常も伝える。
+   IDEA: マッチデー・プログラム。芝の縞と白線，スコアボードの数字。
+   PICTURE: トップは芝の縞の上に「次の試合」スコアボードと今季目標。
+   COLOUR and TYPE: 現行の緑 #00965E・黒・白に，部章の金を差し色。Zen Kaku Gothic New＋数字はOswald。
+   LAYOUT: スマホ1カラム優先，900px以上で2〜3カラム。 */
+:root{color-scheme:light dark;
+--g:#00965E;--gd:#006b43;--gold:#F2C200;--k:#111;
+--bg:light-dark(#ffffff,#0d1310);--bg2:light-dark(#f3f6f4,#141c17);--ink:light-dark(#121614,#e8eeea);
+--mute:light-dark(#5b6660,#a2aea7);--line:light-dark(#dfe5e1,#25302a);--card:light-dark(#fff,#111914)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 "Zen Kaku Gothic New","Hiragino Sans","Noto Sans JP",sans-serif;overflow-x:clip}
+a{color:inherit}
+img{max-width:100%;display:block}
+.band{padding:clamp(28px,5vw,64px) max(4vw,16px)}
+.wrap{max-width:1180px;margin:0 auto}
+h1,h2,h3{line-height:1.25;margin:0 0 10px;text-wrap:balance}
+h2{font-size:clamp(22px,3vw,30px);font-weight:900}
+h3{font-size:17px;font-weight:700}
+.num{font-family:Oswald,"Zen Kaku Gothic New",sans-serif;font-variant-numeric:tabular-nums}
+.mute{color:var(--mute)}.small{font-size:13px}
+.sec-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.more{font-size:14px;color:var(--g);text-decoration:none;font-weight:700}
+.more:hover{text-decoration:underline}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+/* header */
+.top{position:sticky;top:0;z-index:20;background:var(--k);color:#fff;border-bottom:3px solid var(--gold)}
+.top .in{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:12px;padding:8px max(4vw,16px)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;flex:1}
+.brand svg,.brand img{width:46px;height:46px;flex:none;object-fit:contain}
+.brand b{display:block;font-size:15px;line-height:1.2}.brand small{display:block;font-size:11px;color:#bcc6c0;line-height:1.3}
+.gnav{display:flex;gap:2px}
+.gnav a{color:#fff;text-decoration:none;font-size:14px;font-weight:700;padding:10px 10px;border-radius:4px;white-space:nowrap}
+.gnav a:hover,.gnav a.on{background:var(--g)}
+.menu-btn{display:none;background:none;border:2px solid #fff;color:#fff;border-radius:6px;min-width:44px;min-height:44px;font:inherit;font-size:13px;font-weight:700}
+@media(max-width:980px){.gnav{display:none}.menu-btn{display:block}}
+.drawer{position:fixed;inset:0;z-index:30;display:none}
+.drawer.open{display:block}
+.drawer .shade{position:absolute;inset:0;background:rgba(0,0,0,.5)}
+.drawer nav{position:absolute;right:0;top:0;bottom:0;width:min(320px,86vw);background:var(--k);color:#fff;padding:16px;overflow:auto;border-left:4px solid var(--gold)}
+.drawer nav a{display:block;color:#fff;text-decoration:none;padding:13px 10px;border-bottom:1px solid #2a2f2c;font-weight:700}
+.drawer nav a small{display:block;font-weight:400;color:#9aa6a0;font-size:12px}
+.drawer .close{float:right;background:none;border:2px solid #fff;color:#fff;border-radius:6px;min-width:44px;min-height:44px;font:inherit}
+/* hero */
+.hero{background:repeating-linear-gradient(90deg,#00965E 0 11%,#00895a 11% 22%);color:#fff;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.35));pointer-events:none}
+.hero .lines{position:absolute;inset:0;pointer-events:none;opacity:.35}
+.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:center}
+@media(max-width:820px){.hero .wrap{grid-template-columns:minmax(0,1fr)}}
+.hero .eyebrow{font-size:14px;color:#d8efe4;margin:0 0 6px}
+.hero h1{font-size:clamp(30px,5.4vw,54px);font-weight:900;line-height:1.1;margin:0 0 12px}
+.hero h1 span{display:block;font-size:.42em;font-weight:700;color:var(--gold);margin-bottom:8px}
+.hero p{margin:0 0 16px;max-width:36em;color:#eaf6ef}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 18px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;font:inherit;font-weight:700;cursor:pointer}
+.btn.gold{background:var(--gold);color:#111}.btn.line{border-color:#fff;color:#fff;background:transparent}
+.btn.green{background:var(--g);color:#fff}.btn.ghost{border-color:var(--g);color:var(--g);background:transparent}
+.board{background:#0e0f0e;border:3px solid #fff;border-radius:10px;padding:16px 18px;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.board .lab{font-size:12px;color:var(--gold);font-weight:700;letter-spacing:.02em}
+.board .vs{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:10px;margin:8px 0}
+.board .tm{font-weight:900;font-size:clamp(15px,2vw,19px);text-align:center}
+.board .sc{font-size:clamp(34px,6vw,52px);font-weight:700;color:#fff;text-align:center;line-height:1}
+.board .meta{font-size:14px;color:#c9d3cd;border-top:1px dashed #3a3f3c;padding-top:8px;margin-top:6px}
+.board+.board{margin-top:12px}
+.board.res .sc{color:var(--gold)}
+/* entries */
+.entries{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media(max-width:760px){.entries{grid-template-columns:minmax(0,1fr)}}
+.entry{display:block;text-decoration:none;border-radius:10px;padding:18px;background:var(--card);border:1px solid var(--line);position:relative;overflow:hidden}
+.entry b{display:block;font-size:19px;margin-bottom:4px}
+.entry span{font-size:14px;color:var(--mute)}
+.entry::after{content:"→";position:absolute;right:16px;top:16px;font-weight:900;color:var(--g)}
+.entry:hover{border-color:var(--g)}
+.entry.e1{border-top:5px solid var(--gold)}.entry.e2{border-top:5px solid var(--g)}.entry.e3{border-top:5px solid var(--k)}
+/* lists */
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,3vw,36px)}
+@media(max-width:820px){.two{grid-template-columns:minmax(0,1fr)}}
+.list{list-style:none;margin:0;padding:0}
+.list li{border-bottom:1px solid var(--line)}
+.list a{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;padding:12px 2px;text-decoration:none}
+.list .d{font-size:13px;color:var(--mute);white-space:nowrap}
+.list .t{font-weight:700}
+.list .s{grid-column:2;font-size:13px;color:var(--mute)}
+.nw{white-space:nowrap}
+.recs{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.rec{background:#111;color:#fff;border-radius:10px;padding:12px 16px;border-left:5px solid var(--gold,#F2C200)}
+.rec.all{background:var(--g)}
+.rec span{display:block;font-size:13px;color:#ccc}.rec.all span,.rec.all small{color:#e6f4ee}
+.rec b{display:block;font-size:26px;line-height:1.3}
+.rec small{display:block;font-size:11px;color:#999}
+.tl{list-style:none;margin:0;padding:0 0 0 18px;border-left:3px solid var(--line)}
+.tl li{position:relative;padding:10px 0 14px 16px}
+.tl li::before{content:'';position:absolute;left:-27px;top:16px;width:12px;height:12px;border-radius:50%;background:var(--card);border:3px solid var(--g)}
+.tl li.imp::before{background:var(--gold,#F2C200);border-color:var(--g);width:16px;height:16px;left:-29px;top:14px}
+.tl .y{font-weight:800;color:var(--g);font-size:15px;margin-right:8px}
+.tl h4{display:inline;font-size:16px;margin:0}
+.tl li.imp h4{font-size:18px}
+.tl p{margin:4px 0 0;color:var(--ink);font-size:14.5px;line-height:1.7}
+.tl .src{font-size:11.5px;color:var(--mute,#888);margin-top:2px}
+.tl .k-ラグビー界 h4,.tl .k-社会 h4{font-weight:600}
+.tldec{margin:28px 0 6px;font-size:20px;display:flex;align-items:baseline;gap:10px;scroll-margin-top:80px}
+.tldec small{font-size:13px;color:var(--mute,#888);font-weight:400}
+.chip{display:inline-block;font-size:11px;font-weight:700;padding:1px 8px;border-radius:999px;background:var(--bg2);color:var(--g);margin-right:6px;vertical-align:2px;border:1px solid var(--line)}
+.alt{background:var(--bg2)}
+/* members */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.filters button{font:inherit;font-size:14px;min-height:40px;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--g);color:#fff;border-color:var(--g)}
+.filters input{font:inherit;font-size:16px;min-height:40px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);flex:1 1 180px}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(160px,100%),1fr));gap:12px}
+.mcard{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.av{aspect-ratio:1/1;background:linear-gradient(160deg,#00965E,#00643f);display:grid;place-items:center;color:#fff;font-weight:900;font-size:34px;position:relative}
+.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.av .no{z-index:1;background:rgba(0,0,0,.55);padding:0 5px;border-radius:3px}
+.av .no{position:absolute;left:8px;top:6px;font-size:13px;color:var(--gold)}
+.mcard .b{padding:10px 12px}.mcard b{display:block}.mcard .p{font-size:13px;color:var(--mute)}
+@media(max-width:600px){.mgrid{grid-template-columns:minmax(0,1fr);gap:8px}.mgrid .mcard{display:grid;grid-template-columns:72px minmax(0,1fr);align-items:center}.mgrid .av{font-size:24px}.mgrid .av .no{font-size:12px;left:5px;top:2px}.mgrid .mcard .b{padding:8px 12px}}
+/* tables */
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-size:13px;color:var(--mute);font-weight:700;background:var(--bg2)}
+td.r,th.r{text-align:right}
+.scoretbl td,.scoretbl th{text-align:center}
+/* match rows */
+.mrow{display:grid;grid-template-columns:5.5em minmax(0,1fr) auto;gap:4px 14px;align-items:center;padding:14px 4px;border-bottom:1px solid var(--line);text-decoration:none}
+.mrow .dt{font-weight:700;line-height:1.25}.mrow .dt small{display:block;font-weight:400;color:var(--mute);font-size:12px}
+.mrow .op{font-weight:700}.mrow .op small{display:block;font-weight:400;color:var(--mute);font-size:13px}
+.mrow .res{font-size:22px;font-weight:700;white-space:nowrap}
+.win{color:var(--g)}.lose{color:var(--mute)}
+.tag{font-size:12px;font-weight:700;padding:2px 8px;border-radius:4px;background:var(--gold);color:#111;white-space:nowrap}
+/* misc */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px}
+details.faq{border-bottom:1px solid var(--line)}
+details.faq summary{cursor:pointer;padding:14px 4px;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:10px;min-height:44px}
+details.faq summary::after{content:"＋";color:var(--g)}details.faq[open] summary::after{content:"－"}
+details.faq div{padding:0 4px 14px;color:var(--mute)}
+.goal{display:flex;flex-wrap:wrap;gap:20px;align-items:center;background:var(--k);color:#fff;border-radius:10px;padding:20px 22px;border-left:6px solid var(--gold)}
+.goal b{font-size:clamp(22px,3.4vw,34px);font-weight:900}
+.histband{background:var(--k);color:#fff}
+.histband .yr{font-size:clamp(56px,11vw,120px);line-height:.9;color:var(--gold);font-weight:700}
+.histband .wrap{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(16px,4vw,48px);align-items:center}
+@media(max-width:600px){.histband .wrap{grid-template-columns:minmax(0,1fr)}}
+.plogos{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(150px,100%),1fr));gap:10px}
+.plogo{min-height:96px;background:#fff !important;color:#111;display:grid;place-items:center;text-align:center;padding:10px 14px;border:1px solid var(--line);border-radius:8px;background:var(--card);font-weight:700;text-decoration:none}
+.plogo small{display:block;font-weight:400;color:#5b6660;font-size:12px;margin-top:4px}.plogo:hover{border-color:var(--g)}
+.article{max-width:760px}
+.article .body{white-space:pre-wrap;font-size:16.5px;line-height:1.95;margin:18px 0}
+.readtime{font-size:13px;color:var(--mute)}
+.crumb{font-size:13px;color:var(--mute);margin-bottom:10px}.crumb a{color:var(--g)}
+.pagehead{background:var(--g);color:#fff}
+.pagehead h1{font-size:clamp(26px,4vw,40px);font-weight:900;margin:0}
+.pagehead p{margin:6px 0 0;color:#dcefe6}
+.tabs{display:flex;gap:6px;border-bottom:2px solid var(--line);margin-bottom:12px;overflow-x:auto}
+.tabs button{font:inherit;font-weight:700;background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-2px;padding:10px 14px;min-height:44px;color:var(--mute);cursor:pointer;white-space:nowrap}
+.tabs button[aria-selected=true]{color:var(--ink);border-color:var(--g)}
+/* admin */
+.adm{border:2px dashed var(--g);border-radius:10px;padding:18px;background:var(--card)}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;padding:10px 0 10px 44px;position:relative;border-bottom:1px solid var(--line)}
+.steps li::before{content:counter(s);position:absolute;left:0;top:10px;width:30px;height:30px;border-radius:50%;background:var(--g);color:#fff;display:grid;place-items:center;font-weight:700}
+.field{display:grid;gap:6px;margin-bottom:12px}
+.field label{font-size:14px;font-weight:700}
+.field input,.field textarea,.field select{font:inherit;font-size:16px;padding:10px 12px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
+.log{font-size:14px;background:var(--bg2);border-radius:8px;padding:12px;margin-top:10px}
+.log .ng{color:#c0392b}.log .ok{color:var(--g)}
+.notice{background:light-dark(#fff8d6,#2a2510);border-left:4px solid var(--gold);padding:10px 14px;border-radius:4px;font-size:14px;margin:10px 0}
+footer{background:var(--k);color:#cfd6d2;font-size:14px}
+footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(170px,100%),1fr));gap:18px}
+footer a{color:#fff;text-decoration:none;display:block;padding:4px 0}
+footer h4{color:var(--gold);margin:0 0 6px;font-size:14px}
+.baton{display:grid;grid-template-columns:72px minmax(0,1fr);align-items:center}.baton .av{font-size:24px}.baton .p a{color:var(--g)}
+.vcard{display:block;text-decoration:none;position:relative;padding-right:84px;min-height:110px}.vcard:hover{border-color:var(--g)}.vface{position:absolute;right:14px;top:14px;width:60px;height:60px;border-radius:50%;object-fit:cover;object-position:50% 20%}
+.qa{margin:0}.qa dt{font-size:13px;color:var(--mute);margin-top:10px}.qa dd{margin:2px 0 0;font-weight:700}
+@media(max-width:600px){.pgrid{grid-template-columns:minmax(0,1fr)!important}.pgrid>.mcard{max-width:200px}}
+.skip{position:absolute;left:-999px;top:0;z-index:50;background:var(--gold);color:#111;padding:8px 12px}.skip:focus{left:8px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr));gap:10px}
+.stat{background:var(--k);color:#fff;border-radius:10px;padding:12px 16px;border-left:5px solid var(--gold)}
+.stat span{display:block;font-size:12px;color:#bbb}.stat b{display:block;font-size:24px;line-height:1.3}.stat small{display:block;font-size:11px;color:#999}
+a.rec{text-decoration:none;color:#fff}a.rec:hover{outline:2px solid var(--gold)}
+@media(max-width:600px){table.mt thead{display:none}table.mt tr{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:0 10px;padding:9px 0;border-bottom:1px solid var(--line)}table.mt td{border:0;padding:0}table.mt td:nth-child(3){grid-column:2/4;grid-row:2;font-size:12px;color:var(--mute)}}
+.sns{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}.sns a{display:inline-block;border:1px solid #444;border-radius:999px;padding:4px 12px}
+@media(max-width:600px){.stack thead{display:none}.stack tr{display:grid;padding-block:8px;border-bottom:1px solid var(--line)}.stack td{display:flow-root;border:0;padding:3px 0;padding-inline-start:6em;text-align:start}.stack td::before{content:attr(data-l);float:inline-start;width:5.5em;margin-inline-start:-6em;color:var(--mute);font-size:12px}.stack td:empty{display:none}}
+@media (prefers-reduced-motion:no-preference){main{animation:fade .35s ease}@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}}
+</style>
+<meta name="description" content="1921年創部，東京大学運動会ラグビー部の公式サイト。試合日程・結果，部員紹介，リレー日記，105年の歴史，入部案内。">
+<meta name="theme-color" content="#111111">
+<link rel="icon" href="img/emblem.png">
+<script src="data.js"></script>
+</head>
+<body>
+<a class="skip" href="#app">本文へ移動</a>
+<header class="top"><div class="in">
+<a class="brand" href="#home" aria-label="トップへ">
+<span id="emb" style="display:contents"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="48" fill="#F2C200"/><circle cx="50" cy="50" r="41" fill="#00965E"/><circle cx="50" cy="50" r="30" fill="#fff"/><path d="M33 36h34v8H54v26h-8V44H33z" fill="#111"/></svg></span>
+<span><b id="clubName">東京大学運動会ラグビー部</b><small id="clubEn">The University of Tokyo Rugby Football Club</small></span></a>
+<nav class="gnav" id="gnav" aria-label="メイン"></nav>
+<button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="drawer">MENU</button>
+</div></header>
+<div class="drawer" id="drawer"><div class="shade" id="shade"></div><nav aria-label="メニュー"><button class="close" id="closeBtn">閉じる</button><div style="clear:both"></div><div id="dnav"></div></nav></div>
+<main id="app"></main>
+<footer class="band"><div class="wrap">
+<div class="cols" id="fcols"></div>
+<p class="small" style="margin-top:24px;color:#8f9a94" id="faddr"></p>
+<p class="small" style="color:#8f9a94">© <span id="fy"></span> 東京大学運動会ラグビー部</p>
+</div></footer>
+
+<script>
+{
+const DEFAULT_PACKED=window.TURFC_DATA||{__packed:1,sheets:{}},LOCAL=window.TURFC_LOCAL||{};
+const unpack=o=>{if(!o||!o.__packed)return o;const r={};for(const k in o.sheets){const {cols,rows}=o.sheets[k];r[k]=rows.map(a=>{const x={};cols.forEach((c,i)=>x[c]=a[i]==null?'':a[i]);return x})}return r};
+const DEFAULT=unpack(DEFAULT_PACKED);
+let RAW=DEFAULT;
+try{const s=JSON.parse(localStorage.getItem('turfc-data')||'null');if(s&&s.built===DEFAULT_PACKED.built&&s.raw)RAW=s.raw;else localStorage.removeItem('turfc-data')}catch(e){}
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const safeUrl=u=>/^https?:\/\//i.test(String(u||''))||/^#[a-z0-9-]+$/i.test(String(u||''))?esc(u):'';
+const extA=u=>/^https?:/i.test(String(u||''))?' target="_blank" rel="noopener"':'';
+const imgU=u=>{u=String(u||'').trim();if(!u)return'';if(LOCAL[u])return esc(LOCAL[u]);if(!/^https?:\/\//i.test(u))return'';try{return esc(encodeURI(decodeURI(u)))}catch(e){return esc(encodeURI(u))}};
+const NAV=[['home','トップ','TOP'],['match','試合','MATCH'],['team','チーム','TEAM'],['stories','ストーリー','NEWS・日記'],['history','歴史','HISTORY'],['join','入部希望の方へ','JOIN'],['support','応援・支援','SUPPORT'],['contact','お問い合わせ','CONTACT']];
+const REQ={'部員ブログ':['部員ID','記事ID'],'相手メンバー':['試合ID','背番号','氏名'],'Voice・特集':['記事ID','年度','タイトル'],'お知らせ':['日付','タイトル'],'試合':['試合ID','日付','相手'],'部員':['部員ID','氏名'],'試合スコア':['試合ID','チーム','前後半'],'対戦校':['相手'],'部員プロフィール':['部員ID','項目','回答'],'日記':['記事ID','投稿日時','タイトル'],'パートナー':['社名'],'歴代':['回','西暦'],'スタッフ':['役職','氏名'],'試合メンバー':['試合ID','背番号','氏名'],'入部FAQ':['質問','回答'],'入部ガイド':['見出し','本文'],'グッズ':['商品名'],'新歓スケジュール':['日付','イベント'],'ポジション':['ポジション'],'スタッフの仕事':['役割'],'新歓メッセージ':['氏名','メッセージ'],'理念':['項目','見出し'],'百年史_試合':['試合ID','日付','相手'],'百年史_試合スコア':['試合ID','チーム','前後半'],'百年史_試合メンバー':['試合ID','背番号','氏名'],'百年史_相手メンバー':['試合ID','背番号','氏名'],'百年史_部員':['部員ID','氏名'],'百年史_歴代':['年度'],'年表':['年度','見出し']};
+let D;
+const pub=r=>String(r['公開']??'公開').trim()!=='下書き';
+const ok=(sheet,r)=>(REQ[sheet]||[]).every(k=>String(r[k]??'').trim()!=='');
+function wareki(y){return y>=2019?(y===2019?'令和元年':'令和'+(y-2018)+'年'):y>=1989?(y===1989?'平成元年':'平成'+(y-1988)+'年'):y>=1926?(y===1926?'昭和元年':'昭和'+(y-1925)+'年'):'大正'+(y-1911)+'年'}
+const labelOf=r=>String(r['ラベル']||'').trim()||'リレー日記';
+function model(raw){
+  const g=n=>(raw[n]||[]).filter(r=>ok(n,r));
+  const cfg={};(raw['設定']||[]).forEach(r=>{if(r['項目'])cfg[r['項目']]=r['値']??''});
+  const byDate=(k)=>(a,b)=>String(b[k]).localeCompare(String(a[k]));
+  const all=n=>g(n);
+  const grp=(rows,k)=>{const o={};rows.forEach(r=>{const key=String(r[k]).replace(/[^A-Za-z0-9-]/g,'');(o[key]=o[key]||[]).push(r)});return o};
+  // ---- 百年史（別管理シート）をHPの記録に重ねる。HPに同じ試合・同じ人があればHPを優先
+  const hpMatches=all('試合').filter(pub),hpIds=new Set(hpMatches.map(m=>idOf(m['試合ID'])));
+  const alias={},hyM=[];all('百年史_試合').filter(pub).forEach(m=>{const h=idOf(m['HP試合ID']??'');if(h&&hpIds.has(h))alias[idOf(m['試合ID'])]=h;else hyM.push(Object.assign({},m,{src:'百年史'}))});
+  const hpOf={},hyMem=[];all('百年史_部員').filter(pub).forEach(p=>{const h=idOf(p['HP部員ID']??'');if(h)hpOf[idOf(p['部員ID'])]=h;hyMem.push(p)});
+  const hasHP=(sheet)=>new Set(all(sheet).map(r=>idOf(r['試合ID'])));
+  const take=(sheet,hpSheet)=>{const have=hasHP(hpSheet);return all(sheet).filter(r=>{const a=alias[idOf(r['試合ID'])];return !a||!have.has(a)}).map(r=>{const o=Object.assign({},r,{src:'百年史'});const a=alias[idOf(r['試合ID'])];if(a)o['試合ID']=a;if(o['部員ID']!=null&&o['部員ID']!==''){const pid=idOf(o['部員ID']);o['部員ID']=hpOf[pid]||pid}return o})};
+  const members0=all('部員').filter(pub),memIds=new Set(members0.map(m=>idOf(m['部員ID'])));
+  const hyById={};hyMem.forEach(p=>{hyById[hpOf[idOf(p['部員ID'])]||idOf(p['部員ID'])]=p});
+  members0.forEach(m=>{const p=hyById[idOf(m['部員ID'])];if(!p)return;['学部','出身校','ポジション'].forEach(k=>{if(!m[k])m[k]=p[k]});m['卒業年']=p['卒業年'];m['役職（百年史）']=p['役職']});
+  const hyMembers=hyMem.filter(p=>!memIds.has(hpOf[idOf(p['部員ID'])]||idOf(p['部員ID']))).map(p=>Object.assign({},p,{'部員ID':hpOf[idOf(p['部員ID'])]||idOf(p['部員ID']),'在籍':'卒業生',src:'百年史'}));
+  const members=members0.concat(hyMembers),lineup=all('試合メンバー').concat(take('百年史_試合メンバー','試合メンバー'));
+  const matches=hpMatches.concat(hyM).sort((a,b)=>String(a['日付']).localeCompare(String(b['日付']))||(+a['試合ID'])-(+b['試合ID']));
+  matches.forEach(m=>{const c=String(m['大会']||'').replace(/\s+/g,' ').trim();const k=c.match(/^国公立(?:大会)?\s*(.*)$/);if(k){m['大会']='国公立大会';if(k[1]&&!m['節'])m['節']=k[1].replace('１','一')}});
+  const matchById=Object.fromEntries(matches.map(m=>[String(m['試合ID']),m]));
+  const h2h={};all('対戦校').forEach(r=>(h2h[r['相手']]=h2h[r['相手']]||[]).push(r));const past={};
+  const people={};lineup.forEach(l=>{const id=String(l['部員ID']??'').replace(/[^0-9]/g,'');if(!id)return;const p=people[id]||(people[id]={'部員ID':id,'氏名':l['氏名'],'学年':'','ポジション':'',ob:true,last:''});const d=String((matchById[String(l['試合ID'])]||{})['日付']||'');if(d>=p.last){p.last=d;p['氏名']=l['氏名'];p.lastGrade=l['学年（当時）']}});
+  members.forEach(m=>{delete people[String(m['部員ID'])]});
+  return {cfg,matchById,people,memById:Object.fromEntries(members.map(m=>[String(m['部員ID']),m])),lineupBy:grp(lineup,'試合ID'),appsBy:grp(lineup,'部員ID'),
+    scoreBy:grp(all('試合スコア').concat(take('百年史_試合スコア','試合スコア')),'試合ID'),oppBy:grp(all('相手メンバー').concat(take('百年史_相手メンバー','相手メンバー')),'試合ID'),blogBy:grp(all('部員ブログ'),'部員ID'),profBy:grp(all('部員プロフィール').sort((a,b)=>(+a['表示順']||0)-(+b['表示順']||0)),'部員ID'),h2h,past,
+    comps:[...new Set(matches.map(m=>m['大会']))],
+    voice:all('Voice・特集').filter(pub).sort((a,b)=>(+b['年度'])-(+a['年度'])),
+    news:all('お知らせ').filter(pub).sort(byDate('日付')),
+    matches,lineup,members,
+    staff:all('スタッフ').sort((a,b)=>(+a['表示順']||0)-(+b['表示順']||0)),
+    diaryAll:all('日記').filter(pub).sort(byDate('投稿日時')),
+    diary:all('日記').filter(pub).filter(r=>labelOf(r)==='リレー日記').sort(byDate('投稿日時')),
+    juken:all('日記').filter(pub).filter(r=>labelOf(r)==='受験生応援企画').sort(byDate('投稿日時')),
+    goods:all('グッズ').filter(pub).sort((a,b)=>(+a['表示順']||0)-(+b['表示順']||0)),
+    partners:all('パートナー').filter(pub).sort((a,b)=>(+a['表示順']||0)-(+b['表示順']||0)),
+    nenpyo:all('年表').filter(pub).sort((a,b)=>(+a['年度'])-(+b['年度'])),
+    hist:(()=>{const by={};all('歴代').forEach(h=>by[+h['西暦']]=Object.assign({},h));all('百年史_歴代').forEach(r=>{const y=+r['年度'];const h=by[y]||(by[y]={'回':y-(+(raw['設定']||[]).find(r=>r['項目']==='創部年')?.['値']||1921)+1,'西暦':y,'和暦':wareki(y),'監督':r['監督'],'主将':r['主将'],src:'百年史'});if(!h['部長'])h['部長']=r['部長'];if(!h['コーチ'])h['コーチ']=r['コーチ'];if(!h['監督'])h['監督']=r['監督'];if(!h['主将'])h['主将']=r['主将']});return Object.values(by).sort((a,b)=>(+b['西暦'])-(+a['西暦']))})(),
+    faq:all('入部FAQ').filter(pub).sort((a,b)=>(+a['表示順']||0)-(+b['表示順']||0)),
+    shinkan:all('新歓スケジュール').filter(pub).sort((a,b)=>(+a['表示順']||0)-(+b['表示順']||0)),
+    positions:all('ポジション').sort((a,b)=>(+a['表示順']||0)-(+b['表示順']||0)),
+    staffjobs:all('スタッフの仕事').filter(pub).sort((a,b)=>(+a['表示順']||0)-(+b['表示順']||0)),
+    msgs:all('新歓メッセージ').filter(pub).sort((a,b)=>(+a['表示順']||0)-(+b['表示順']||0)),
+    rinen:all('理念').sort((a,b)=>(+a['表示順']||0)-(+b['表示順']||0)),
+    guide:all('入部ガイド').filter(pub).sort((a,b)=>(+a['表示順']||0)-(+b['表示順']||0)),
+    drafts:['お知らせ','日記'].flatMap(n=>(raw[n]||[]).filter(r=>!pub(r)).map(r=>({sheet:n,r})))
+  };
+}
+const WD='日月火水木金土';
+const fd=s=>{if(!s)return'';const m=String(s).match(/(\d{4})-(\d{2})-(\d{2})/);if(!m)return esc(s);return `${m[1]}.${m[2]}.${m[3]}`};
+const md=s=>{const m=String(s||'').match(/(\d{4})-(\d{2})-(\d{2})/);if(!m)return{d:'',w:'',y:'',j:''};const d=new Date(+m[1],m[2]-1,+m[3]);const w=WD[d.getDay()];return{y:m[1],d:`${+m[2]}/${+m[3]}`,w,j:`${m[1]}年${+m[2]}月${+m[3]}日（${w}）`}};
+const played=m=>String(m['東大得点']??'')!=='';
+const todayS=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
+const upcoming=m=>!played(m)&&String(m['日付']).slice(0,10)>=todayS();
+const ko=m=>m['開始時刻']?esc(m['開始時刻']):'時刻未定';
+const idOf=s=>String(s).replace(/[^A-Za-z0-9-]/g,'');
+const sinceYear=()=>+D.cfg['創部年']||1921;
+const seasonYear=()=>+(String(D.cfg['今季']||'').match(/\d{4}/)||[])[0]||new Date().getFullYear();
+const years=()=>seasonYear()-sinceYear();
+const nth=()=>seasonYear()-sinceYear()+1;
+const wld=r=>`${r.w}勝 ${r.l}敗${r.d?` ${r.d}分`:''}`;
+const stat=(k,v,n)=>`<div class="stat"><span>${k}</span><b class="num">${v}</b>${n?`<small>${n}</small>`:''}</div>`;
+const hideTBD=s=>/【要確認】/.test(String(s||''))?'':String(s||'');
+const initials=n=>esc(String(n).trim().charAt(0));
+const av=(m,no)=>`<div class="av">${no?`<span class="no num">${esc(no)}</span>`:''}${initials(m['氏名'])}${imgU(m['写真URL'])?`<img src="${imgU(m['写真URL'])}" alt="${esc(m['氏名'])}" loading="lazy" onerror="this.remove()">`:''}</div>`;
+
+function board(m,label){
+  if(!m)return'';const r=played(m),x=md(m['日付']);
+  return `<a href="#match-${idOf(m['試合ID'])}" class="board ${r?'res':''}" style="display:block;text-decoration:none;color:#fff">
+  <div class="lab">${label}${m['大会']?'｜'+esc(m['大会']):''}</div>
+  <div class="vs"><div class="tm">東京大学</div><div class="sc num">${r?`${esc(m['東大得点'])}<span style="color:#777"> - </span>${esc(m['相手得点'])}`:'VS'}</div><div class="tm">${esc(m['相手'])}</div></div>
+  <div class="meta">${x.j}${r?'':' '+ko(m)}${m['会場']?`<br>${esc(m['会場'])}`:''}</div></a>`;
+}
+const newsId=r=>{const d=String(r['日付']).replace(/-/g,'');return d+'-'+D.news.filter(x=>String(x['日付']).replace(/-/g,'')===d).reverse().indexOf(r)};
+function newsItems(n){return D.news.slice(0,n).map((r,i)=>`<li><a href="#news-${newsId(r)}"><span class="d num">${fd(r['日付'])}</span><span class="t"><span class="chip">${esc(r['カテゴリ']||'お知らせ')}</span>${esc(r['タイトル'])}</span></a></li>`).join('')}
+const auName=r=>{const p=mem(r['執筆者ID']);return p?esc(p['氏名']):esc(r['執筆者（自動）']||r['執筆者']||'部員')};
+const auGrade=r=>{const p=mem(r['執筆者ID']);return p?stL(p):''};
+function diaryItems(n,list){return (list||D.diary).slice(0,n).map(r=>`<li><a href="#diary-${idOf(r['記事ID'])}"><span class="d num">${fd(r['投稿日時'])}</span><span class="t">${esc(r['タイトル'])}</span><span class="s">${auName(r)}${auGrade(r)?`（${auGrade(r)}）`:''}</span></a></li>`).join('')}
+const head=(t,p)=>`<section class="pagehead band" style="padding-block:clamp(22px,4vw,40px)"><div class="wrap"><h1>${t}</h1>${p?`<p>${p}</p>`:''}</div></section>`;
+
+const V={};
+V.home=()=>{
+  const up=D.matches.filter(upcoming),done=D.matches.filter(played);
+  const pick=D.members.filter(m=>m['在籍']==='現役'&&m['区分']==='選手'&&m['写真URL']);const pm=pick[Math.floor(Math.random()*pick.length)];
+  const hu=imgU(D.cfg['ヒーロー画像URL']);
+  return `<section class="hero band" ${hu?`style="background:linear-gradient(100deg,rgba(0,107,67,.94) 0%,rgba(0,150,94,.78) 45%,rgba(0,0,0,.35) 100%),url('${hu}') center 30%/cover"`:''}><svg class="lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line x1="50" y1="0" x2="50" y2="100" stroke="#fff" stroke-width=".3"/><line x1="22" y1="0" x2="22" y2="100" stroke="#fff" stroke-width=".2" stroke-dasharray="2 2"/><line x1="78" y1="0" x2="78" y2="100" stroke="#fff" stroke-width=".2" stroke-dasharray="2 2"/></svg>
+  <div class="wrap"><div>
+   ${imgU(D.cfg['部章URL'])?`<img src="${imgU(D.cfg['部章URL'])}" alt="" style="width:clamp(64px,9vw,96px);margin-bottom:12px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.35))">`:''}<p class="eyebrow">Since ${sinceYear()}｜創部${years()}年・第${nth()}シーズン　${esc(D.cfg['今季']||'')}</p>
+   <h1><span>今季目標</span>${esc(D.cfg['今季目標']||'')}</h1>
+   <p>主将 ${esc(D.cfg['主将']||'')}　副将 ${esc(D.cfg['副将']||'')}</p>
+   <div class="btns"><a class="btn gold" href="#match">試合日程・結果</a><a class="btn line" href="#join">入部希望の方へ</a></div>
+  </div><div>${board(up[0],'次の試合')}${board(done[done.length-1],'直近の結果')}</div></div></section>
+  <section class="band"><div class="wrap"><div class="entries">
+   <a class="entry e1" href="#join"><b>入部したい</b><span>大学から始める人も，スタッフ志望も。見学・FAQ・4年間の流れ</span></a>
+   <a class="entry e2" href="#match"><b>観戦・応援したい</b><span>試合日程と会場，結果とメンバー，リレー日記</span></a>
+   <a class="entry e3" href="#support"><b>支えたい</b><span>オフィシャルパートナー，協賛・ご寄付，公式グッズ，OB倶楽部</span></a>
+  </div></div></section>
+  <section class="band alt"><div class="wrap two">
+   <div><div class="sec-h"><h2>お知らせ</h2><a class="more" href="#stories">一覧へ →</a></div><ul class="list">${newsItems(4)}</ul></div>
+   <div><div class="sec-h"><h2>リレー日記</h2><a class="more" href="#stories-diary">一覧へ →</a></div><ul class="list">${diaryItems(4)}</ul></div>
+  </div></section>
+  ${pm?`<section class="band"><div class="wrap"><div class="sec-h"><h2>部員紹介</h2><a class="more" href="#team">全員を見る →</a></div>
+   <div style="display:grid;grid-template-columns:140px minmax(0,1fr);gap:18px;align-items:center;max-width:560px"><div class="mcard">${av(pm)}</div>
+   <div><b style="font-size:20px">${esc(pm['氏名'])}</b><div class="mute">${stL(pm)}｜${esc(pm['ポジション'])}</div><div class="small mute">${esc(pm['出身校'])}</div>${pm['ひとこと']?`<p>${esc(pm['ひとこと'])}</p>`:''}</div></div></div></section>`:''}
+  <section class="histband band"><div class="wrap"><div class="yr num">${years()}<small style="font-size:.3em;color:#fff"> 年</small></div>
+   <div><h2>${sinceYear()}年の創部から${years()}年，第${nth()}シーズン</h2><p style="color:#cfd6d2">歴代の監督・主将，定期戦の記録，百年史をまとめています。</p><a class="btn gold" href="#history">歴史を見る</a></div></div></section>
+  <section class="band"><div class="wrap"><div class="sec-h"><h2>オフィシャルパートナー</h2><a class="more" href="#support">詳しく →</a></div><div class="plogos">${partnerLogos()}</div></div></section>
+  ${access()}`;
+};
+const pIdx=p=>D.partners.indexOf(p);
+const pCard=p=>`<a class="plogo" href="#partner-${pIdx(p)}"><span>${imgU(p['ロゴ画像URL'])?`<img src="${imgU(p['ロゴ画像URL'])}" alt="${esc(p['社名'])}" style="max-height:52px;margin:0 auto" onerror="this.replaceWith(document.createTextNode(this.alt))">`:'<b>'+esc(p['社名'])+'</b>'}${imgU(p['ロゴ画像URL'])?`<small>${esc(p['社名'])}</small>`:''}${p['掲出位置']?`<small>${esc(p['掲出位置'])}</small>`:''}</span></a>`;
+const partnerLogos=()=>D.partners.map(p=>`<a class="plogo" href="#partner-${pIdx(p)}"><span>${imgU(p['ロゴ画像URL'])?`<img src="${imgU(p['ロゴ画像URL'])}" alt="${esc(p['社名'])}" style="max-height:52px;margin:0 auto" onerror="this.replaceWith(document.createTextNode(this.alt))">`:esc(p['社名'])}<small>${esc(p['区分'])}</small></span></a>`).join('');
+const access=()=>`<section class="band alt"><div class="wrap two"><div><h2>アクセス</h2><p>${esc(D.cfg['住所']||'')}</p><p class="mute">${esc(D.cfg['最寄り駅']||'')}</p></div>
+ <div class="card"><h3>練習見学・お問い合わせ</h3><p class="mute small">入部希望，取材，協賛，グラウンド利用などはお問い合わせページから。</p><a class="btn green" href="#contact">お問い合わせ</a></div></div></section>`;
+
+const comp=m=>esc(m['大会'])+(m['節']?' '+esc(m['節']):'');
+const wl=(a,b)=>+a>+b?'○':+a<+b?'●':'△';
+const PTS=r=>(+r['T']||0)*5+(+r['G']||0)*2+(+r['PT']||0)*7+(+r['PG']||0)*3+(+r['DG']||0)*3;
+const mem=id=>D.memById[String(id)]||D.people[String(id)];
+const seasonOf=m=>String(m['年度']||String(m['日付']).slice(0,4));
+const curSeason=()=>String(D.cfg['今季']||new Date().getFullYear()).slice(0,4);
+const OFFICIAL=c=>!/練習|部内|OB|親善|新歓|その他|交流|新人/.test(String(c||''));
+const teamL=m=>m['チーム']?`<span class="chip">${esc(m['チーム'])}</span>`:'';
+const POSN={1:'PR',2:'HO',3:'PR',4:'LO',5:'LO',6:'FL',7:'FL',8:'No.8',9:'SH',10:'SO',11:'WTB',12:'CTB',13:'CTB',14:'WTB',15:'FB'};
+const gradeL=g=>g===''||g==null?'—':/^\d$/.test(String(g))?g+'年':/^[MD]\d$/.test(String(g))?'院'+esc(g):esc(g);
+const recOf=g=>{const p=g.filter(played);const w=p.filter(m=>+m['東大得点']>+m['相手得点']).length,l=p.filter(m=>+m['東大得点']<+m['相手得点']).length;return {w,l,d:p.length-w-l,n:p.length}};
+V.match=(season)=>{
+  season=season||curSeason();
+  const seasons=[...new Set(D.matches.map(seasonOf))].sort().reverse();
+  const S=D.matches.filter(m=>seasonOf(m)===season);
+  const up=S.filter(upcoming),done=S.filter(m=>!upcoming(m)).slice().reverse();
+  const row=m=>{const x=md(m['日付']),r=played(m),w=+m['東大得点']>+m['相手得点'];
+   return `<a class="mrow" href="#match-${idOf(m['試合ID'])}"><div class="dt num">${x.d}<small>${x.w}曜 ${r?'':ko(m)}</small></div>
+   <div class="op">${teamL(m)}vs ${esc(m['相手'])}<small>${comp(m)}｜${esc(m['会場']||'会場未登録')}</small></div>
+   ${r?`<div class="res num ${w?'win':'lose'}">${wl(m['東大得点'],m['相手得点'])} ${esc(m['東大得点'])}-${esc(m['相手得点'])}</div>`:`<span class="tag">${upcoming(m)?'予定':'結果未登録'}</span>`}</a>`};
+  const R=recOf(S),A=S.filter(m=>!m['チーム']);
+  const isA=m=>!m['チーム']||m['チーム']==='A';
+  const comps=[...new Set(S.map(m=>m['大会']))];
+  return head('試合',`${esc(season)}年度の日程・結果（${seasons[seasons.length-1]}〜${seasons[0]}年度を収録）`)+`<section class="band" style="padding-bottom:0"><div class="wrap">
+  <div class="filters"><label for="ssel" class="mute small" style="align-self:center">年度</label><select id="ssel" style="font:inherit;font-size:16px;min-height:44px;padding:6px 10px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink)" onchange="location.hash='season-'+this.value">${seasons.map(y=>`<option${y===season?' selected':''}>${y}</option>`).join('')}</select>
+  ${seasons.indexOf(season)<seasons.length-1?`<a class="btn ghost" style="min-height:40px;padding:6px 14px" href="#season-${seasons[seasons.indexOf(season)+1]}">← 前年度</a>`:''}${seasons.indexOf(season)>0?`<a class="btn ghost" style="min-height:40px;padding:6px 14px" href="#season-${seasons[seasons.indexOf(season)-1]}">次年度 →</a>`:''}</div>
+  <div class="recs"><div class="rec all"><span>${esc(season)}年度 全試合</span><b class="num">${wld(R)}</b><small>Bチーム・練習試合を含む${R.n<S.length?`／予定${S.length-R.n}試合`:''}</small></div>${comps.filter(c=>c&&!/練習|部内|OB|新歓|その他/.test(c)).map(c=>{const g=S.filter(m=>m['大会']===c),a=g.filter(isA),r=recOf(a.length?a:g);return r.n||g.length?`<a class="rec" href="#comp-${season}-${D.comps.indexOf(c)}"><span>${esc(c)}</span><b class="num">${r.n?wld(r):'—'}</b><small>${a.length&&a.length<g.length?'Aチーム':g.length>r.n?'予定'+(g.length-r.n)+'試合':''}　一覧 →</small></a>`:''}).join('')}</div>
+  </div></section>
+  <section class="band"><div class="wrap two">
+  <div><h2>${up.length?'これからの試合':'結果'}</h2>${(up.length?up:done.slice(0,Math.ceil(done.length/2))).map(row).join('')||'<p class="mute">試合はありません。</p>'}</div>
+  <div><h2>${up.length?'結果':'&nbsp;'}</h2>${(up.length?done:done.slice(Math.ceil(done.length/2))).map(row).join('')}</div></div></section>`;
+};
+V.comp=k=>{const [season,i]=k.split('-');const c=D.comps[+i];if(c==null)return V.notfound();const g=D.matches.filter(m=>m['大会']===c&&seasonOf(m)===season);const all=D.matches.filter(m=>m['大会']===c);const R=recOf(g),A=recOf(all);
+  return head(esc(c)+' 試合情報一覧',`${esc(season)}年度`)+`<section class="band"><div class="wrap" style="max-width:860px"><p class="crumb"><a href="#season-${season}">試合（${esc(season)}年度）</a> ／ ${esc(c)}</p>
+  <div class="goal" style="margin-bottom:14px"><span style="color:#bbb">${esc(season)}年度</span><b class="num">${R.w}勝 ${R.l}敗${R.d?` ${R.d}分`:''}</b><span style="color:#bbb">収録全期間</span><b class="num">${A.w}勝 ${A.l}敗${A.d?` ${A.d}分`:''}</b></div>${matchTable(g)}
+  <h3 style="margin-top:24px">年度ごとの成績</h3><div class="scroll"><table class="stack"><thead><tr><th>年度</th><th class="r">試合</th><th class="r">勝</th><th class="r">敗</th><th class="r">分</th></tr></thead><tbody>${[...new Set(all.map(seasonOf))].sort().reverse().map(y=>{const r=recOf(all.filter(m=>seasonOf(m)===y));return `<tr><td><a href="#comp-${y}-${i}" style="color:var(--g);font-weight:700">${y}</a></td><td class="r num">${r.n}</td><td class="r num">${r.w}</td><td class="r num">${r.l}</td><td class="r num">${r.d}</td></tr>`}).join('')}</tbody></table></div></div></section>`};
+function matchTable(g,cur){return `<div class="scroll"><table class="mt"><thead><tr><th>日付</th><th>相手</th><th>大会</th><th class="r">結果</th></tr></thead><tbody>${g.map(m=>{const r=played(m);return `<tr${cur&&m===cur?' style="background:var(--bg2)"':''}><td class="num">${fd(m['日付'])}</td><td>${teamL(m)}${m['試合ID']?`<a href="#match-${idOf(m['試合ID'])}" style="color:var(--g);font-weight:700">${esc(m['相手'])}</a>`:esc(m['相手'])}</td><td>${comp(m)}</td><td class="r num">${r?`${wl(m['東大得点'],m['相手得点'])} ${esc(m['東大得点'])}-${esc(m['相手得点'])}`:upcoming(m)?'予定':'結果未登録'}</td></tr>`}).join('')}</tbody></table></div>`}
+V.matchDetail=id=>{
+  const m=D.matchById[id];if(!m)return V.notfound();
+  const x=md(m['日付']),r=played(m),L=(D.lineupBy[id]||[]).slice().sort((a,b)=>a['背番号']-b['背番号']);
+  const OL=(D.oppBy[id]||[]).slice().sort((a,b)=>a['背番号']-b['背番号']);
+  const S=(D.scoreBy[id]||[]);const sc=(t,h)=>S.find(s=>s['チーム']===t&&s['前後半']===h);
+  const COLS=['T','G','PT','PG','DG'];
+  const half=(t,h)=>{const s=sc(t,h);return s?(s['得点（記載）']!==''&&s['得点（記載）']!=null?+s['得点（記載）']:PTS(s)):''};
+  const tot=t=>COLS.map(k=>S.filter(s=>s['チーム']===t).reduce((a,s)=>a+(+s[k]||0),0));
+  const yr=+seasonOf(m);
+  const mismatch=yr>=1992&&S.length&&r&&(half('東京大学','前半')+half('東京大学','後半')!==+m['東大得点']||half('相手','前半')+half('相手','後半')!==+m['相手得点']);
+  const nameOf=no=>{const l=L.find(z=>+z['背番号']===+no);return l?esc(l['氏名']):''};
+  const card=l=>{const p=mem(l['部員ID']);const no=+l['背番号'];const nm=esc(l['氏名']);
+    const sub=l['交代した背番号']!==''&&l['交代した背番号']!=null?`← ${esc(l['交代した背番号'])} ${nameOf(l['交代した背番号'])}${l['交代時間（分）']!==''&&l['交代時間（分）']!=null?`（${esc(l['交代時間（分）'])}分）`:''}`:'';
+    const pts=['T','G','PT','PG','DG'].filter(k=>+l[k]).map(k=>k+esc(l[k])).join(' ');
+    const inner=`${av(p||{'氏名':l['氏名']},no)}<div class="b"><b>${nm}</b><div class="p">${l['ポジション（記載）']?esc(l['ポジション（記載）']):no<=15?POSN[no]:'リザーブ'}${l['学年（当時）']?'｜'+gradeL(l['学年（当時）']):''}</div>${sub?`<div class="p">${sub}</div>`:''}${pts?`<div class="p" style="color:var(--g);font-weight:700">${pts}</div>`:''}</div>`;
+    return p?`<a class="mcard" href="#player-${idOf(l['部員ID'])}" style="text-decoration:none">${inner}</a>`:`<div class="mcard">${inner}</div>`};
+  const same=D.matches.filter(z=>z['大会']===m['大会']&&seasonOf(z)===seasonOf(m));
+  const h=D.h2h[m['相手']];
+  const vs=D.matches.filter(z=>z['相手']===m['相手']&&played(z));const VO=recOf(vs.filter(z=>OFFICIAL(z['大会'])&&!z['チーム'])),VA=recOf(vs);
+  return head(`vs ${esc(m['相手'])}`,`${comp(m)}${m['チーム']?'（'+esc(m['チーム'])+'チーム）':''}｜${x.j}${r?'':' '+ko(m)}`)+`<section class="band"><div class="wrap">
+  <p class="crumb"><a href="#season-${seasonOf(m)}">試合（${seasonOf(m)}年度）</a> ／ <a href="#comp-${seasonOf(m)}-${D.comps.indexOf(m['大会'])}">${esc(m['大会'])}</a> ／ ${esc(m['相手'])}</p>
+  <div class="two"><div>${board(m,r?'試合結果':upcoming(m)?'試合予定':'結果未登録')}
+  ${S.length?`<div class="scroll" style="margin-top:16px"><table class="scoretbl"><thead><tr><th></th>${COLS.map(k=>`<th>${k}</th>`).join('')}<th>前半</th><th>後半</th><th>計</th></tr></thead><tbody>
+   ${['東京大学','相手'].map(t=>`<tr><th>${t==='相手'?esc(m['相手']):'東京大学'}</th>${tot(t).map(v=>`<td class="num">${v}</td>`).join('')}<td class="num">${half(t,'前半')}</td><td class="num">${half(t,'後半')}</td><td class="num"><b>${esc(t==='相手'?m['相手得点']:m['東大得点'])}</b></td></tr>`).join('')}</tbody></table></div>
+   <p class="small mute">T：トライ G：ゴール PT：認定トライ PG：ペナルティゴール DG：ドロップゴール${mismatch?'<br><span style="color:#c0392b">※前後半の内訳と合計が一致しません（認定トライ等の未入力の可能性）。</span>':''}</p>`:''}
+  <p class="mute small">会場：${esc(m['会場']||'未登録')}${m['レフリー']?`　レフリー：${esc(m['レフリー'])}`:''}</p>
+  ${safeUrl(m['レポート'])?`<p><a class="more" href="${safeUrl(m['レポート'])}">現行サイトの試合ページ →</a></p>`:''}
+  ${m.src||L.some(l=>l.src)?`<p class="small mute">出典：『100年史』${m.src?esc(m['出典']||'資料編'):'資料編②（出場メンバー）'}${m['相手（記載）']&&m['相手（記載）']!==m['相手']?`／原本の表記「${esc(m['相手（記載）'])}」`:''}${m['備考']?`／${esc(m['備考'])}`:''}${L.some(l=>l.src)?'。出場メンバーは原本の姓を部員名簿で補正したもので，一部未確認です。':''}</p>`:''}</div>
+  <div><h2>${esc(m['相手'])}との戦績</h2>
+   <div class="stats" style="margin-bottom:10px">${stat('公式戦（Aチーム）',wld(VO),VO.n+'試合')}${stat('全試合',wld(VA),'練習試合・B以下を含む')}</div>
+   ${h?h.map(x=>`<p class="small mute" style="margin:4px 0">参考（旧サイト表記）：公式戦対戦成績 ${esc(x['公式戦対戦成績の期間'])} ${esc(x['勝'])}勝${esc(x['敗'])}敗${esc(x['分'])}分</p>`).join(''):''}
+   ${matchTable(vs.slice().reverse().slice(0,12),m)}${vs.length>12?`<details style="margin-top:8px"><summary style="cursor:pointer;font-weight:700;color:var(--g);min-height:44px">残り${vs.length-12}試合を表示（${esc(seasonOf(vs[0]))}〜${esc(seasonOf(vs[vs.length-13]))}年度）</summary>${matchTable(vs.slice().reverse().slice(12),m)}</details>`:''}
+  </div></div>
+  ${L.length?`<h2 style="margin-top:28px">出場メンバー</h2><h3 class="mute">先発</h3><div class="mgrid">${L.filter(l=>+l['背番号']<=15).map(card).join('')}</div>${L.some(l=>+l['背番号']>15)?`<h3 class="mute" style="margin-top:16px">リザーブ</h3><div class="mgrid">${L.filter(l=>+l['背番号']>15).map(card).join('')}</div>`:''}`:(r?'<p class="mute">出場メンバーは未登録です。</p>':'')}
+  ${OL.length?`<details style="margin-top:20px"><summary style="cursor:pointer;font-weight:700;min-height:44px">${esc(m['相手'])}のメンバー（${OL.length}名）</summary><div class="scroll"><table class="stack"><thead><tr><th class="r">背番号</th><th>ポジション</th><th>氏名</th><th>交代</th></tr></thead><tbody>${OL.map(o=>`<tr><td class="r num">${esc(o['背番号'])}</td><td>${esc(o['ポジション'])}</td><td>${esc(o['氏名'])}${o['学年']?` (${esc(o['学年'])})`:''}</td><td>${o['交代した背番号']!=null&&o['交代した背番号']!==''?`← ${esc(o['交代した背番号'])}（${esc(o['交代時間（分）'])}分）`:''}</td></tr>`).join('')}</tbody></table></div></details>`:''}
+  <h2 style="margin-top:28px">${esc(seasonOf(m))}年度 ${esc(m['大会'])} 試合情報一覧</h2>${matchTable(same,m)}
+  </div></section>`;
+};
+V.player=id=>{
+  const p=mem(id);if(!p)return V.notfound();
+  const apps=(D.appsBy[id]||[]).map(l=>({l,m:D.matchById[String(l['試合ID'])]})).filter(a=>a.m).sort((a,b)=>String(b.m['日付']).localeCompare(String(a.m['日付'])));
+  const cs=curSeason(),cur=apps.filter(a=>seasonOf(a.m)===cs);
+  const st=a=>a.filter(x=>+x.l['背番号']<=15).length,tr=a=>a.reduce((s,x)=>s+(+x.l['T']||0),0);
+  const Q=(D.profBy[id]||[]).filter(q=>q['表示']!=='非表示');const dia=D.diaryAll.filter(d=>idOf(d['執筆者ID'])===id);
+  const row=(k,v)=>v===''||v==null?'':`<tr><th style="width:34%">${k}</th><td>${v}</td></tr>`;
+  const years=[...new Set(apps.map(a=>seasonOf(a.m)))];
+  const isOB=p.ob||p['在籍']==='卒業生';const blogs=(D.blogBy[id]||[]).map(b=>({b,d:D.diaryAll.find(x=>idOf(x['記事ID'])===idOf(b['記事ID']))}));
+  return head(esc(p['氏名']),`${p.ob?'卒業生（出場記録のみ）':stL(p)}｜${esc(p['ポジション']||'')}${years.length?`｜出場 ${years[years.length-1]}〜${years[0]}年度`:''}`)+`<section class="band"><div class="wrap">
+  <p class="crumb"><a href="#team">部員紹介</a> ／ ${esc(p['氏名'])}</p>
+  <div style="display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:24px;align-items:start" class="pgrid">
+   <div class="mcard">${av(p)}</div>
+   <div><h2>プロフィール</h2><table><tbody>${row('氏名',esc(p['氏名']))}${row('かな',esc(p['ふりがな']))}${row('在籍',p.ob?'卒業生（最終出場時 '+esc(p.lastGrade||'')+'年）':stL(p))}${row('学部',esc(p['学部']))}${row('出身校',esc(p['出身校']))}${row('出身中学校',esc(p['出身中学校']))}${row('出身大学',esc(p['出身大学']))}${row('ポジション',esc(p['ポジション']))}${row('卒業',p['卒業年']?esc(p['卒業年'])+'年'+(p['卒業年（和暦）']?'（'+esc(p['卒業年（和暦）'])+'）':''):'')}${row('役職',esc(p['役職']||p['役職（百年史）']||''))}${row('備考',p.src?esc(p['備考']||''):'')}${row('身長',p['身長cm']?esc(p['身長cm'])+'cm':'')}${row('体重',p['体重kg']?esc(p['体重kg'])+'kg':'')}</tbody></table>
+   ${p.src?`<p class="small mute">『100年史』通史の卒業生名簿から作られたページです（${esc(p['出典']||'')}）。</p>`:''}
+   ${p.ob?'<p class="small mute">卒業生は出場記録から自動で作られたページです。プロフィールは部員シートに追加すると表示されます。</p>':''}
+   ${Q.length?`<h3 style="margin-top:18px">コメント</h3><dl class="qa">${Q.map(q=>`<dt>${esc(q['項目'])}</dt><dd>${esc(q['回答'])}</dd>`).join('')}</dl>`:''}</div></div>
+  <h2 style="margin-top:28px">出場記録</h2>
+  <div class="goal" style="margin-bottom:12px">${isOB?'':`<span style="color:#bbb">今季</span><b class="num">${cur.length}試合</b>`}<span style="color:#bbb">通算</span><b class="num">${apps.length}試合</b><span style="color:#bbb">先発</span><b class="num">${st(apps)}</b><span style="color:#bbb">トライ（記録分）</span><b class="num">${tr(apps)}</b></div>
+  ${years.map(y=>{const a=apps.filter(x=>seasonOf(x.m)===y);return `<details${y===years[0]?' open':''} style="margin-bottom:8px"><summary style="cursor:pointer;font-weight:700;min-height:40px">${y}年度　${a.length}試合（先発${st(a)}）</summary><div class="scroll"><table class="stack"><thead><tr><th>日付</th><th>相手</th><th>大会</th><th>背番号</th><th class="r">結果</th></tr></thead><tbody>${a.map(({l,m})=>`<tr><td class="num">${fd(m['日付'])}</td><td>${teamL(m)}<a href="#match-${idOf(m['試合ID'])}" style="color:var(--g);font-weight:700">${esc(m['相手'])}</a></td><td>${comp(m)}</td><td class="num">${esc(l['背番号'])}${l['ポジション（記載）']?' '+esc(l['ポジション（記載）']):+l['背番号']<=15?' '+POSN[+l['背番号']]:'（リザーブ）'}</td><td class="r num">${played(m)?`${wl(m['東大得点'],m['相手得点'])} ${esc(m['東大得点'])}-${esc(m['相手得点'])}`:''}</td></tr>`).join('')}</tbody></table></div></details>`}).join('')||'<p class="mute">出場記録はありません。</p>'}
+  ${D.voice.filter(v=>idOf(v['部員ID'])===id).length?`<h2 style="margin-top:28px">Voice</h2><div class="cards">${D.voice.filter(v=>idOf(v['部員ID'])===id).map(vCard).join('')}</div>`:''}
+  ${blogs.length||dia.length?`<h2 style="margin-top:28px">このメンバーのブログ記事 <span class="mute small">${Math.max(blogs.length,dia.length)}件</span></h2><ul class="list">${(blogs.length?blogs:dia.map(d=>({b:{'記事ID':d['記事ID']},d}))).map(({b,d})=>d?`<li><a href="#diary-${idOf(d['記事ID'])}"><span class="d num">${fd(d['投稿日時'])}</span><span class="t">${esc(d['タイトル'])}</span></a></li>`:`<li><a href="${safeUrl(b['元記事URL'])}"><span class="d num">記事${esc(b['記事ID'])}</span><span class="t mute">現行サイトで読む →</span></a></li>`).join('')}</ul>`:''}
+  ${p['元ページ']&&safeUrl(p['元ページ'])?`<p><a class="more" href="${safeUrl(p['元ページ'])}">現行サイトの個人ページ →</a></p>`:''}
+  </div></section>`;
+};
+let mf={g:'*',k:'',q:'',st:'現役',dec:''};
+const stL=m=>m.ob?'卒業生':m['在籍']==='現役'?gradeL(m['学年']):esc(m['在籍']||'');
+V.team=()=>head('チーム','今季の目標・体制・部員紹介')+`<section class="band"><div class="wrap">
+  <div class="goal"><span class="mute" style="color:#bbb">${esc(D.cfg['今季']||'')} 目標</span><b>${esc(D.cfg['今季目標']||'')}</b></div>
+  ${D.voice.filter(v=>String(v['年度'])===String(D.cfg['今季']||'').slice(0,4)).length?`<h2 style="margin-top:28px">今季のVoice</h2><div class="cards">${D.voice.filter(v=>String(v['年度'])===String(D.cfg['今季']||'').slice(0,4)).map(vCard).join('')}</div>`:''}
+  <h2 style="margin-top:28px">体制</h2>
+  <div class="cards">${['首脳陣','指導陣','メディカル'].map(k=>`<div class="card"><h3>${k}</h3><table><tbody>${D.staff.filter(s=>s['区分']===k).map(s=>`<tr><td class="mute small" style="width:42%">${esc(s['役職'])}</td><td>${esc(s['氏名'])}${s['卒年']?` <span class="mute small">(${esc(s['卒年'])})</span>`:''}</td></tr>`).join('')}</tbody></table></div>`).join('')}</div>
+  <h2 style="margin-top:28px">部員紹介</h2>
+  <div class="filters" id="mfil"></div><div class="mgrid" id="mg"></div></div></section>`;
+const gy=m=>+m['卒業年']||9999;
+const decOf=m=>m['卒業年']?String(Math.floor(+m['卒業年']/10)*10):'new';
+const DECS=()=>{const s=new Set(D.members.filter(m=>m['在籍']==='卒業生').map(decOf));return ['new',...[...s].filter(x=>x!=='new').sort().reverse()].filter(x=>s.has(x))};
+function drawMembers(){
+  const STS=['現役','院生・その他','指導陣・スタッフ','卒業生'],G=['*','1','2','3','4'],K=['','選手','スタッフ'];
+  const el=document.getElementById('mfil');if(!el)return;
+  const cnt=st=>D.members.filter(m=>m['在籍']===st).length;
+  el.innerHTML=STS.filter(cnt).map(st=>`<button data-st="${st}" aria-pressed="${mf.st===st}">${st} <span class="num">${cnt(st)}</span></button>`).join('')+'<span style="flex-basis:100%;height:0"></span>'+(mf.st==='現役'?G.map(g=>`<button data-g="${g}" aria-pressed="${mf.g===g}">${g==='*'?'全学年':g+'年'}</button>`).join(''):mf.st==='卒業生'?DECS().map(x=>`<button data-dec="${x}" aria-pressed="${mf.dec===x}">${x==='new'?'最近の卒業生':x+'年代卒'}</button>`).join(''):'')+K.slice(1).map(k=>`<button data-k="${k}" aria-pressed="${mf.k===k}">${k}</button>`).join('')+`<input id="mq" type="search" placeholder="名前・出身校・学部・ポジション（全員から検索）" value="${esc(mf.q)}" aria-label="部員を検索">`;
+  const list=D.members.filter(m=>(mf.q?true:m['在籍']===mf.st)&&(mf.q||mf.st!=='卒業生'||!mf.dec||decOf(m)===mf.dec)&&(mf.q||mf.st!=='現役'||mf.g==='*'||String(m['学年']??'')===mf.g)&&(!mf.k||m['区分']===mf.k)&&(!mf.q||[m['氏名'],m['ふりがな'],m['出身校'],m['学部'],m['ポジション']].join(' ').includes(mf.q)));
+  if(mf.st!=='現役'||mf.q)list.sort((x,y)=>gy(y)-gy(x)||(+y['部員ID'])-(+x['部員ID']));
+  const cs=curSeason();
+  document.getElementById('mg').innerHTML=list.slice(0,300).map(m=>{const a=(D.appsBy[idOf(m['部員ID'])]||[]);const n=a.filter(l=>seasonOf(D.matchById[String(l['試合ID'])]||{})===cs).length;return `<a class="mcard" href="#player-${idOf(m['部員ID'])}" style="text-decoration:none">${av(m)}<div class="b"><b>${esc(m['氏名'])}</b><div class="p">${stL(m)}｜${esc(m['ポジション'])}</div><div class="p">${esc(m['出身校'])}${m['卒業年']?`　${esc(m['卒業年'])}年卒`:''}</div>${m['在籍']==='現役'&&n?`<div class="p" style="color:var(--g);font-weight:700">今季${n}試合出場</div>`:a.length?`<div class="p" style="color:var(--g);font-weight:700">通算${a.length}試合出場</div>`:''}</div></a>`}).join('')||'<p class="mute">該当する部員はいません。</p>';
+  const more=list.length-300;if(more>0)document.getElementById('mg').insertAdjacentHTML('beforeend',`<p class="mute small" style="grid-column:1/-1">ほか${more}名。年代や名前で絞り込んでください。</p>`);
+  el.querySelectorAll('button').forEach(b=>b.onclick=()=>{if('dec' in b.dataset)mf.dec=mf.dec===b.dataset.dec?'':b.dataset.dec;if('st' in b.dataset){mf.st=b.dataset.st;mf.g='*';mf.dec=''}if('g' in b.dataset)mf.g=b.dataset.g;if('k' in b.dataset)mf.k=mf.k===b.dataset.k?'':b.dataset.k;drawMembers()});
+  const q=document.getElementById('mq');q.oninput=()=>{mf.q=q.value;const pos=q.selectionStart;drawMembers();const n=document.getElementById('mq');n.focus();n.setSelectionRange(pos,pos)};
+}
+V.stories=(tab)=>head('ストーリー','お知らせ・リレー日記・Voice')+`<section class="band"><div class="wrap">
+ <div class="tabs" role="tablist"><button role="tab" aria-selected="${!tab}" onclick="location.hash='stories'">お知らせ</button><button role="tab" aria-selected="${tab==='diary'}" onclick="location.hash='stories-diary'">リレー日記</button><button role="tab" aria-selected="${tab==='voice'}" onclick="location.hash='stories-voice'">Voice・特集</button></div>
+ ${tab==='voice'?voiceList():tab==='diary'?(D.juken.length?`<p class="mute" style="margin-top:12px">部員がバトンをつなぐリレー日記です。受験期の経験を綴った<a href="#juken" style="color:var(--g);font-weight:700">受験生応援企画（${D.juken.length}本）</a>もご覧ください。</p>`:'')+[...new Set(D.diary.map(d=>String(d['投稿日時']).slice(0,7)))].map(mo=>`<h3 style="margin-top:20px">${mo.replace('-','年')}月 <span class="mute small">${D.diary.filter(d=>String(d['投稿日時']).startsWith(mo)).length}件</span></h3><ul class="list">${diaryItems(999,D.diary.filter(d=>String(d['投稿日時']).startsWith(mo)))}</ul>`).join(''):`<ul class="list">${newsItems(999)}</ul>`}</div></section>`;
+const LINKL={'#stories-diary':'リレー日記の一覧へ','#stories-voice':'Voice・特集の一覧へ','#partners':'オフィシャルパートナーを見る','#goods':'公式グッズを見る','#join':'入部希望の方へ','#juken':'受験生応援企画を読む','#match':'試合日程・結果へ'};
+V.news=i=>{const r=D.news.find(x=>newsId(x)===i)||(/^\d{1,3}$/.test(i)?D.news[+i]:null);if(!r)return V.notfound();const L=String(r['リンク']||'');const y=String(r['日付']).slice(0,4);
+ let extra='';
+ if(L==='#stories-diary')extra=`<h3 style="margin-top:24px">最新のリレー日記</h3><ul class="list">${diaryItems(5)}</ul>`;
+ else if(L==='#stories-voice'){const vs=D.voice.filter(v=>String(v['年度'])===y);extra=vs.length?`<h3 style="margin-top:24px">${y}年度のVoice</h3><div class="cards">${vs.map(vCard).join('')}</div>`:''}
+ else if(L==='#juken'&&D.juken.length)extra=`<h3 style="margin-top:24px">最新の受験生応援企画</h3><ul class="list">${diaryItems(5,D.juken)}</ul>`;
+ else if(L==='#partners')extra=`<h3 style="margin-top:24px">オフィシャルパートナー</h3><div class="plogos">${D.partners.filter(p=>p['区分']!=='サポーター').map(pCard).join('')}</div>`;
+ return head('お知らせ')+`<section class="band"><div class="wrap article"><p class="crumb"><a href="#stories">お知らせ</a> ／ ${fd(r['日付'])}</p>
+ <h2>${esc(r['タイトル'])}</h2><p class="mute small"><span class="chip">${esc(r['カテゴリ']||'お知らせ')}</span>${fd(r['日付'])}${r['投稿者']?'　'+esc(r['投稿者']):''}</p>
+ ${imgU(r['画像URL'])?`<img src="${imgU(r['画像URL'])}" alt="" onerror="this.remove()" style="border-radius:8px;margin:12px 0">`:''}
+ <div class="body">${esc(r['本文']||'')}</div>${extra}${safeUrl(L)?`<p style="margin-top:20px"><a class="btn ${L.startsWith('#')?'gold':'ghost'}" href="${safeUrl(L)}"${extA(L)}>${LINKL[L]||'関連リンク'} →</a></p>`:''}</div></section>`};
+const vRole=v=>v['役職']?esc(v['役職'])+' ':'';
+const vCard=v=>{const p=v['部員ID']?mem(v['部員ID']):null;return `<a class="card vcard" href="#voice-${idOf(v['記事ID'])}"><span class="chip">${esc(v['種別'])}</span><span class="num mute small">${esc(v['年度'])}</span><h3 style="margin:8px 0 4px">${v['種別']==='Voice'?'「'+esc(v['タイトル'])+'」':esc(v['タイトル'])}</h3><div class="mute small">${vRole(v)}${esc(v['執筆者'])}</div>${p&&imgU(p['写真URL'])?`<img src="${imgU(p['写真URL'])}" alt="" class="vface">`:''}</a>`};
+function voiceList(){const ys=[...new Set(D.voice.map(v=>v['年度']))];return `<p class="mute">年度初めに主将・副将がチームへの想いを綴る「Voice」と，合宿日記などの特集記事です。</p>`+ys.map(y=>{const h=D.hist.find(x=>+x['西暦']===+y);return `<h3 style="margin-top:22px">${esc(y)}年度${h?` <span class="mute small">監督 ${esc(h['監督'])}　主将 ${esc(h['主将'])}</span>`:''}</h3><div class="cards">${D.voice.filter(v=>+v['年度']===+y).map(vCard).join('')}</div>`}).join('')}
+V.voice=id=>{const v=D.voice.find(x=>idOf(x['記事ID'])===id);if(!v)return V.notfound();const p=v['部員ID']?mem(v['部員ID']):null;const h=D.hist.find(x=>+x['西暦']===+v['年度']);const same=D.voice.filter(x=>+x['年度']===+v['年度']&&x!==v);
+ return head(v['種別']==='Voice'?'Voice':esc(v['種別']),`${esc(v['年度'])}年度`)+`<section class="band"><div class="wrap article"><p class="crumb"><a href="#stories-voice">Voice・特集</a> ／ ${esc(v['年度'])}年度</p>
+ <h2>${v['種別']==='Voice'?'「'+esc(v['タイトル'])+'」':esc(v['タイトル'])}</h2><p class="mute">${vRole(v)}${p?`<a href="#player-${idOf(v['部員ID'])}" style="color:var(--g);font-weight:700">${esc(v['執筆者'])}</a>`:esc(v['執筆者'])}</p>
+ ${p?`<div class="mcard baton" style="max-width:420px;margin:12px 0">${av(p)}<div class="b"><b>${esc(p['氏名'])}</b><div class="p">${[stL(p),esc(p['ポジション']||'')].filter(Boolean).join('｜')}</div><div class="p"><a href="#player-${idOf(v['部員ID'])}">個人ページへ</a></div></div></div>`:''}
+ ${v['本文']?`<p class="readtime">${String(v['本文']).length}字・約${Math.max(1,Math.round(String(v['本文']).length/600))}分</p>`:''}<div class="body">${esc(v['本文']||'（本文は現行サイトで見つかりませんでした）')}</div>${safeUrl(v['元記事URL'])?`<p><a class="more" href="${safeUrl(v['元記事URL'])}">現行サイトの元記事 →</a></p>`:''}
+ ${h?`<div class="card" style="margin-top:20px"><h3>${esc(v['年度'])}年度のチーム</h3><p style="margin:0">監督 ${esc(h['監督'])}　主将 ${esc(h['主将'])}${h['記録・メモ']?'　'+esc(h['記録・メモ']):''}</p><a class="more" href="#history">歴代一覧へ →</a></div>`:''}
+ ${same.length?`<h3 style="margin-top:20px">同じ年度の記事</h3><div class="cards">${same.map(vCard).join('')}</div>`:''}</div></section>`};
+V.diary=id=>{const r=D.diaryAll.find(d=>idOf(d['記事ID'])===id);if(!r)return V.notfound();
+ const LB=labelOf(r),LL=D.diaryAll.filter(d=>labelOf(d)===LB),home=LB==='受験生応援企画'?'#juken':'#stories-diary';
+ const asc=LL.slice().reverse(),k=asc.indexOf(r),prev=asc[k-1],next=asc[k+1];
+ const au=mem(r['執筆者ID']),nx=mem(r['次の走者ID']);
+ const from=asc.slice(0,k).reverse().find(d=>idOf(d['次の走者ID'])===idOf(r['執筆者ID']));
+ const nxPost=nx?asc.slice(k+1).find(d=>idOf(d['執筆者ID'])===idOf(r['次の走者ID'])):null;
+ const person=(p,lab)=>p?`<div class="mcard baton">${av(p)}<div class="b"><div class="p">${lab}</div><a href="#player-${idOf(p['部員ID'])}" style="color:var(--ink);text-decoration:none"><b>${esc(p['氏名'])}</b></a><div class="p">${[stL(p),esc(p['ポジション']||'')].filter(Boolean).join('｜')}</div></div></div>`:'';
+ return head(esc(LB))+`<section class="band"><div class="wrap article"><p class="crumb"><a href="${home}">${esc(LB)}</a> ／ ${fd(r['投稿日時'])}</p>
+ <h2>${esc(r['タイトル'])}</h2><p class="mute small">${au?`<a href="#player-${idOf(r['執筆者ID'])}" style="color:var(--g);font-weight:700">${esc(au['氏名'])}</a>${stL(au)?`（${stL(au)}）`:''}`:auName(r)}　${fd(r['投稿日時'])}</p>
+ <p class="readtime">${String(r['本文']||'').length}字・約${Math.max(1,Math.round(String(r['本文']||'').length/600))}分</p><div class="body">${esc(r['本文'])}</div>${safeUrl(r['元記事URL'])?`<p><a class="more" href="${safeUrl(r['元記事URL'])}">現行サイトの元記事 →</a></p>`:''}
+ <h3 style="margin-top:24px">バトンのつながり</h3>
+ <div class="cards">${from?person(mem(from['執筆者ID']),`← バトンを受け取った（<a href="#diary-${idOf(from['記事ID'])}">${esc(from['タイトル'])}</a>）`):''}${person(au,'執筆者')}${nx?person(nx,`→ 次の走者${nxPost?`（<a href="#diary-${idOf(nxPost['記事ID'])}">${esc(nxPost['タイトル'])}</a>）`:'（まだ投稿なし）'}`):''}</div>
+ <div class="btns" style="margin-top:20px;justify-content:space-between">${prev?`<a class="btn ghost" href="#diary-${idOf(prev['記事ID'])}">← 前の日記</a>`:'<span></span>'}${next?`<a class="btn ghost" href="#diary-${idOf(next['記事ID'])}">次の日記 →</a>`:''}</div></div></section>`};
+let hq='';
+V.history=()=>head('歴史',`${sinceYear()}年創部，${seasonYear()}年度は第${nth()}シーズン`)+`<section class="band"><div class="wrap">
+ <div class="cards" style="margin-bottom:24px"><a class="card" href="#history" onclick="setTimeout(()=>document.getElementById('ayumi')?.scrollIntoView({behavior:'smooth'}),50)" style="text-decoration:none;color:inherit"><h3>${years()}年のあゆみ</h3><p class="mute" style="margin:0">${(()=>{const s=new Set();return D.nenpyo.filter(n=>{const d=Math.floor(+n['年度']/10);if(!n['重要']||s.has(d))return false;s.add(d);return true})})().slice(0,11).map(n=>`<span class="num" style="color:var(--g);font-weight:700">${esc(n['年度'])}</span> ${esc(n['見出し'])}`).join('<br>')}</p><p class="more" style="margin-top:8px">年表を見る →</p></a>
+ <div class="card">${imgU(D.cfg['百年史画像URL'])?`<img src="${imgU(D.cfg['百年史画像URL'])}" alt="東京大学ラグビー部百年史" style="border-radius:8px;margin-bottom:12px;width:100%">`:''}<h3>東京大学ラグビー部百年史</h3><p class="mute">1921年度からの通史・試合記録・部員名簿をまとめた百年史。内容はこのページの年表，試合記録，卒業生の個人ページにも反映しています。</p>${safeUrl(D.cfg['百年史URL'])?`<a class="more" href="${safeUrl(D.cfg['百年史URL'])}"${extA(D.cfg['百年史URL'])}>百年史を開く →</a>`:'<a class="more" href="#contact">ご購入・閲覧のお問い合わせ →</a>'}</div></div>
+ <div class="sec-h" id="ayumi"><h2>${years()}年のあゆみ</h2></div>
+ <p class="mute">『東京大学ラグビー部100年史』第3編「通史」から主な出来事をまとめた年表です（2022年度以降は本サイトの記録から）。年度をクリックするとその年の試合一覧へ移ります。</p>
+ <div class="filters" id="tlf"></div><div id="tlnav" class="filters" style="margin-top:-4px"></div><div id="tlb"></div>
+ <div class="sec-h" style="margin-top:36px"><h2>歴代部長・監督・主将</h2><div class="filters" style="margin:0"><input id="hq" type="search" placeholder="名前・年で検索" value="${esc(hq)}" aria-label="歴代を検索"></div></div>
+ <div class="scroll"><table class="stack"><thead><tr><th style="width:9em">年度</th><th style="width:8em">部長</th><th style="width:8em">監督</th><th style="width:8em">主将</th><th>Voice・記録</th></tr></thead><tbody id="htb"></tbody></table></div></div></section>`;
+let tf={k:'',imp:false,q:''};
+const KINDS=['部の歩み','試合・戦績','組織・施設','ラグビー界','社会'];
+function drawTL(){const el=document.getElementById('tlb');if(!el)return;
+ const f=document.getElementById('tlf');
+ f.innerHTML=`<button data-k="" aria-pressed="${!tf.k}">すべて</button>`+KINDS.filter(k=>D.nenpyo.some(n=>n['区分']===k)).map(k=>`<button data-k="${k}" aria-pressed="${tf.k===k}">${k}</button>`).join('')+`<button data-imp="1" aria-pressed="${tf.imp}">★主な出来事だけ</button><input id="tlq" type="search" placeholder="年表を検索（人名・大学名など）" value="${esc(tf.q)}" aria-label="年表を検索">`;
+ const L=D.nenpyo.filter(n=>(!tf.k||n['区分']===tf.k)&&(!tf.imp||n['重要'])&&(!tf.q||[n['年度'],n['和暦'],n['見出し'],n['内容']].join(' ').includes(tf.q)));
+ const decs=[...new Set(L.map(n=>Math.floor(+n['年度']/10)*10))];
+ document.getElementById('tlnav').innerHTML=decs.map(d=>`<a class="btn ghost" style="min-height:36px;padding:4px 12px;font-size:13px" href="javascript:void(0)" onclick="document.getElementById('tld${d}').scrollIntoView({behavior:'smooth'})">${d}年代</a>`).join('');
+ const hasS=new Set(D.matches.map(seasonOf));
+ el.innerHTML=decs.map(d=>{const g=L.filter(n=>Math.floor(+n['年度']/10)*10===d);const W=d<1926?'大正':d<1989?'昭和':d<2019?'平成':'令和';
+  return `<h3 class="tldec" id="tld${d}">${d}年代<small>${esc(g[0]['和暦']||'')}〜</small></h3><ul class="tl">${g.map(n=>{const y=String(n['年度']);return `<li class="${n['重要']?'imp':''} k-${esc(n['区分'])}">${hasS.has(y)?`<a class="y num" href="#season-${y}">${y}</a>`:`<span class="y num">${y}</span>`}<span class="chip">${esc(n['区分'])}</span><h4>${esc(n['見出し'])}</h4><p>${esc(n['内容'])}</p>${n['出典']?`<div class="src">出典：${esc(n['出典'])}</div>`:''}</li>`}).join('')}</ul>`}).join('')||'<p class="mute">該当する出来事はありません。</p>';
+ f.querySelectorAll('button').forEach(b=>b.onclick=()=>{if('k' in b.dataset)tf.k=b.dataset.k;if('imp' in b.dataset)tf.imp=!tf.imp;drawTL()});
+ const q=document.getElementById('tlq');q.oninput=()=>{tf.q=q.value;const p=q.selectionStart;drawTL();const n=document.getElementById('tlq');n.focus();n.setSelectionRange(p,p)};
+}
+function drawHist(){drawTL();const tb=document.getElementById('htb');if(!tb)return;const r=D.hist.filter(h=>!hq||Object.values(h).join(' ').includes(hq));
+ tb.innerHTML=r.map(h=>`<tr><td data-l="年度">${D.matches.some(m=>seasonOf(m)===String(h['西暦']))?`<a class="num" href="#season-${esc(h['西暦'])}" style="color:var(--g);font-weight:700">${esc(h['西暦'])}</a>`:`<b class="num">${esc(h['西暦'])}</b>`}<span class="mute small" style="display:block;white-space:nowrap">${esc(h['和暦'])}・第${+h['西暦']-sinceYear()+1}回</span></td><td data-l="部長" class="nw">${esc(h['部長']||'')}</td><td data-l="監督" class="nw">${esc(h['監督']||'')}</td><td data-l="主将" class="nw">${esc(h['主将']||'')}</td><td data-l="Voice・記録">${D.voice.filter(v=>+v['年度']===+h['西暦']).map(v=>`<a href="#voice-${idOf(v['記事ID'])}" style="color:var(--g);display:block">${v['種別']==='Voice'?'「'+esc(v['タイトル'])+'」':esc(v['タイトル'])} <span class="mute small">${esc(v['執筆者'])}</span></a>`).join('')}${h['記録・メモ']?`<span class="small mute">${esc(h['記録・メモ'])}</span>`:''}${h['コーチ']?`<span class="small mute" style="display:block">コーチ：${esc(h['コーチ'])}</span>`:''}</td></tr>`).join('');
+ const q=document.getElementById('hq');q.oninput=()=>{hq=q.value;drawHist()}}
+const jYear=r=>{const m=String(r['投稿日時']).match(/(\d{4})-(\d{2})/);return m?(+m[2]>=4?+m[1]:+m[1]-1):0};
+V.juken=()=>{const ys=[...new Set(D.juken.map(jYear))].sort((a,b)=>b-a);
+ return head('受験生応援企画','東大ラグビー部員から，全国の受験生へ')+`<section class="band"><div class="wrap">
+ <p class="crumb"><a href="#join">入部希望の方へ</a> ／ 受験生応援企画</p>
+ <p>毎年秋から冬にかけて，部員がバトンをつなぎながら受験期の経験談やアドバイスを綴る企画です。勉強法，部活との両立，本番の過ごし方——東大ラグビー部の先輩たちの「あの頃」を読んでみてください。</p>
+ <div class="filters">${ys.map(y=>`<a class="btn ghost" style="min-height:36px;padding:4px 12px;font-size:13px" href="javascript:void(0)" onclick="document.getElementById('jy${y}').scrollIntoView({behavior:'smooth'})">${y}年度</a>`).join('')}</div>
+ ${ys.map(y=>{const L=D.juken.filter(r=>jYear(r)===y);return `<h3 id="jy${y}" style="margin-top:24px;scroll-margin-top:80px">${y}年度 <span class="mute small">${y+1}年入試に向けて・${L.length}本</span></h3><ul class="list">${diaryItems(999,L.slice().reverse())}</ul>`}).join('')||'<p class="mute">日記シートで「ラベル」を「受験生応援企画」にした記事がここに表示されます。</p>'}
+ </div></section>`};
+V.join=()=>{const c=D.cfg,ext=(u,t,cls)=>safeUrl(u)?`<a class="btn ${cls||'ghost'}" href="${safeUrl(u)}" target="_blank" rel="noopener">${t}</a>`:'';
+ const slogan=D.rinen.find(r=>r['項目']==='SLOGAN');const sec=(id,t)=>`<h2 id="j-${id}" style="margin-top:40px;scroll-margin-top:80px">${t}</h2>`;
+ const nav=[['why','東大ラグビー部の魅力'],['week','練習と生活'],['pos','ポジション'],['staff','スタッフの仕事'],['schedule','新歓スケジュール'],['msg','先輩から'],['faq','よくある質問']];
+ return head('入部希望の方へ','東大ラグビー部で過ごす4年間')+`<section class="band"><div class="wrap">
+ ${slogan?`<div class="goal" style="display:block;margin-bottom:20px"><div style="color:#bbb;font-size:13px">${esc((String(slogan['見出し']).match(/（(.*?)）/)||[,''])[1])}年度 チームスローガン</div><b style="font-size:24px;display:block;margin:4px 0">${esc(String(slogan['見出し']).replace(/（.*?）/,''))}</b><div style="color:#ddd">${esc(slogan['本文'])}</div></div>`:''}
+ <div class="filters">${nav.map(([k,t])=>`<a class="btn ghost" style="min-height:38px;padding:5px 14px;font-size:14px" href="javascript:void(0)" onclick="document.getElementById('j-${k}').scrollIntoView({behavior:'smooth'})">${t}</a>`).join('')}</div>
+ ${sec('why','東大ラグビー部の魅力')}<div class="cards">${D.guide.map(g=>`<div class="card"><h3>${esc(g['見出し'])}</h3><p class="mute" style="margin:0">${esc(g['本文'])}</p></div>`).join('')}</div>
+ ${sec('week','練習と生活')}<div class="scroll"><table class="stack"><thead><tr><th>曜日</th><th>練習</th></tr></thead><tbody>${[['月','全休'],['火','朝練 → 授業へ'],['水','朝練 → 授業へ'],['木','全休'],['金','朝練 → 授業へ'],['土','午前練習（午後は自由）'],['日','午前練習（午後は自由）']].map(([d,t])=>`<tr><td data-l="曜日"><b>${d}</b></td><td data-l="練習">${t}</td></tr>`).join('')}</tbody></table></div>
+ <p class="small mute">週5回。空き時間や放課後にウエイトトレーニングをする部員もいます。プロコーチの指導日と自主練習日を組み合わせています。時期や学年によって練習時間が変わることがあります。</p>
+ ${D.rinen.length?`<details class="faq" style="margin-top:12px"><summary>チームの理念（MISSION・VISION・VALUE・SPIRIT）</summary><div>${D.rinen.filter(r=>r['項目']!=='SLOGAN').map(r=>`<p style="margin:0 0 10px"><span class="chip">${esc(r['項目'])}</span><b>${esc(r['見出し'])}</b><br><span class="mute">${esc(r['本文']||'')}</span></p>`).join('')}</div></details>`:''}
+ ${sec('pos','ポジション')}<p class="mute">15人それぞれに役割があり，体格・スピード・器用さなど自分の強みを生かせます。</p>
+ <div class="cards">${D.positions.map(p=>`<div class="card"><span class="chip">${esc(p['区分'])}</span><span class="num mute small">${esc(p['背番号'])}番</span><h3 style="margin:6px 0 2px">${esc(p['ポジション'])} <span class="small mute">${esc(p['呼び名']||'')}</span></h3><div style="color:var(--g);font-weight:700;margin-bottom:4px">「${esc(p['キャッチコピー']||'')}」</div><p class="mute small" style="margin:0">${esc(p['説明']||'')}</p></div>`).join('')}</div>
+ ${sec('staff','スタッフの仕事')}<p class="mute">選手だけでなく，それぞれの得意分野でチームを支えるスタッフも募集しています。ラグビー経験は問いません。</p>
+ <div class="cards">${D.staffjobs.map(j=>`<div class="card"><h3>${esc(j['役割'])}</h3><p class="mute small" style="margin:0 0 6px">${esc(j['仕事の内容'])}</p>${j['やりがい']?`<p class="small" style="margin:0;color:var(--g);font-weight:700">${esc(j['やりがい'])}</p>`:''}</div>`).join('')}</div>
+ ${sec('schedule','新歓スケジュール')}${D.shinkan.some(e=>/要確認/.test(e['年度']||''))?'<p class="notice">下は昨年度の新歓の日程です。今年度の日程は決まり次第，このページと新歓のX・Instagramでお知らせします。</p>':''}
+ <div class="scroll"><table class="stack"><thead><tr><th style="width:9em">日付</th><th>イベント</th><th>場所</th><th>内容</th></tr></thead><tbody>${D.shinkan.map(e=>`<tr><td data-l="日付" class="nw"><b>${esc(e['日付'])}</b>${e['時刻']?` <span class="mute small">${esc(e['時刻'])}</span>`:''}</td><td data-l="イベント"><b>${esc(e['イベント'])}</b>${e['対象']?`<span class="chip" style="margin-left:6px">${esc(e['対象'])}</span>`:''}</td><td data-l="場所">${esc(e['場所']||'')}</td><td data-l="内容"><span class="small">${esc(e['内容']||'')}</span></td></tr>`).join('')}</tbody></table></div>
+ <p class="small mute">新歓練習の日以外も，いつでも練習を見学できます。</p>
+ ${sec('msg','先輩から新入生へ')}<div class="cards">${D.msgs.map(m=>{const p=m['部員ID']?mem(m['部員ID']):null;return `<div class="card">${p?`<div style="display:flex;gap:12px;align-items:center;margin-bottom:8px"><div style="width:56px;flex:none">${av(p)}</div><div>`:'<div><div>'}<span class="chip">${esc(m['年度'])}年度 ${esc(m['役職'])}</span><h3 style="margin:4px 0 0">${p?`<a href="#player-${idOf(m['部員ID'])}" style="color:inherit">${esc(m['氏名'])}</a>`:esc(m['氏名'])}</h3><div class="mute small">${esc(m['出身校・学部']||'')}</div></div></div><p style="margin:0">${esc(m['メッセージ'])}</p></div>`}).join('')}</div>
+ ${D.juken.length?`<a class="card" href="#juken" style="display:block;margin-top:16px;text-decoration:none;color:inherit"><h3>受験生応援企画（${D.juken.length}本）</h3><p class="mute">部員が全国の受験生に向けて，受験期の経験談やアドバイスをリレー形式で届けています。最新：${esc(D.juken[0]['タイトル'])}</p><span class="more">受験生応援企画を読む →</span></a>`:safeUrl(c['受験生応援企画URL'])?`<div class="card" style="margin-top:16px"><h3>受験生応援企画</h3>${ext(c['受験生応援企画URL'],'受験生応援企画を読む →')}</div>`:''}
+ ${sec('faq','よくある質問')}${D.faq.map(f=>`<details class="faq"><summary>${esc(f['質問'])}</summary><div>${esc(f['回答'])}</div></details>`).join('')}
+ <div class="goal" style="margin-top:28px;justify-content:space-between;flex-wrap:wrap;gap:12px"><div><b style="font-size:22px">まずは練習を見に来てください</b><div style="color:#ccc">駒場キャンパス ラグビー場｜手ぶらでOK</div></div><div class="btns" style="margin:0">${ext(c['新歓X'],'新歓 X','gold')}${ext(c['新歓Instagram'],'新歓 Instagram','gold')}<a class="btn line" href="#contact">見学を申し込む</a></div></div>
+ ${safeUrl(c['新歓動画1'])||safeUrl(c['新歓動画2'])?`<p class="small" style="margin-top:12px">新歓ムービー：${[c['新歓動画1'],c['新歓動画2']].filter(safeUrl).map((u,i)=>`<a href="${safeUrl(u)}" target="_blank" rel="noopener" style="color:var(--g);font-weight:700">動画${i+1}（YouTube）</a>`).join('　')}</p>`:''}
+ </div></section>`};
+V.support=()=>head('応援・支援','チームを支えてくださる皆さまへ')+`<section class="band"><div class="wrap">
+ <h2 id="partners" style="scroll-margin-top:80px">オフィシャルパートナー</h2><p class="mute">2026年度秋シーズンより，創部以来初めて公式戦用ジャージにパートナー企業のロゴを掲出しています。ロゴを押すと各社の紹介とメッセージをご覧いただけます。</p>
+ ${[...new Set(D.partners.map(p=>p['区分']))].map(k=>`<h3 style="margin-top:16px">${esc(k)}</h3><div class="plogos">${D.partners.filter(p=>p['区分']===k).map(pCard).join('')}</div>`).join('')}
+ <div class="cards" style="margin-top:28px">
+  <div class="card"><h3>協賛・ご寄付のご案内</h3><p class="mute">ジャージ・ベンチコートへのロゴ掲出，試合スポンサーなどの協賛や，ご寄付についてのご相談を承っています。お問い合わせフォームから「協賛・ご寄付」を選んでご連絡ください。</p><a class="btn ghost" href="#contact">協賛について問い合わせる</a></div>
+  <a class="card" href="#goods" style="text-decoration:none;color:inherit">${imgU(D.cfg['公式グッズ画像URL'])?`<img src="${imgU(D.cfg['公式グッズ画像URL'])}" alt="公式グッズ" style="border-radius:8px;margin-bottom:12px;aspect-ratio:4/3;object-fit:cover;width:100%">`:''}<h3>公式グッズ</h3><p class="mute">レプリカジャージ・記念タオルなど${D.goods.length}品。試合会場と通販で購入できます。</p><span class="btn ghost">グッズを見る →</span></a>
+  <div class="card"><h3>OB倶楽部</h3><p class="mute">卒業生の皆さまの会員サイトです。</p>${safeUrl(D.cfg['OB倶楽部URL'])?`<a class="btn ghost" href="${safeUrl(D.cfg['OB倶楽部URL'])}"${extA(D.cfg['OB倶楽部URL'])}>会員サイトへ</a>`:''}</div></div></div></section>`;
+V.partners=()=>{setTimeout(()=>document.getElementById('partners')?.scrollIntoView(),30);return V.support()};
+V.partner=i=>{const p=D.partners[+i];if(!p)return V.notfound();const u=safeUrl(p['URL']),a=safeUrl(p['関連記事URL']);
+ const news=D.news.filter(n=>n['リンク']==='#partners'||String(n['本文']||'').includes(String(p['社名']).replace(/株式会社\s*/,'')));
+ return head(esc(p['社名']),`オフィシャルパートナー｜${esc(p['区分'])}`)+`<section class="band"><div class="wrap" style="max-width:820px"><p class="crumb"><a href="#support">応援・支援</a> ／ <a href="#partners">オフィシャルパートナー</a> ／ ${esc(p['社名'])}</p>
+ <div class="two" style="align-items:center"><div class="plogo" style="min-height:160px">${imgU(p['ロゴ画像URL'])?`<img src="${imgU(p['ロゴ画像URL'])}" alt="${esc(p['社名'])}" style="max-height:90px;margin:0 auto">`:`<b style="font-size:22px">${esc(p['社名'])}</b>`}</div>
+ <div><table><tbody><tr><th style="width:30%">区分</th><td>${esc(p['区分'])}</td></tr>${p['掲出位置']?`<tr><th>ロゴ掲出位置</th><td>${esc(p['掲出位置'])}</td></tr>`:''}${u?`<tr><th>Webサイト</th><td><a href="${u}" target="_blank" rel="noopener" style="color:var(--g);word-break:break-all">${esc(p['URL'])}</a></td></tr>`:''}</tbody></table></div></div>
+ ${p['メッセージ']?`<h3 style="margin-top:22px">メッセージ</h3><p>${esc(p['メッセージ'])}</p>`:'<p class="mute small" style="margin-top:18px">紹介文はパートナーシートの「メッセージ」に入力すると表示されます。</p>'}
+ ${news.length?`<h3 style="margin-top:22px">関連するお知らせ</h3><ul class="list">${news.map(n=>`<li><a href="#news-${newsId(n)}"><span class="d num">${fd(n['日付'])}</span><span class="t">${esc(n['タイトル'])}</span></a></li>`).join('')}</ul>`:''}
+ ${a?`<p><a class="more" href="${a}" target="_blank" rel="noopener">プレスリリースを読む →</a></p>`:''}
+ <div class="btns" style="margin-top:20px;justify-content:space-between">${D.partners[+i-1]?`<a class="btn ghost" href="#partner-${+i-1}">← ${esc(D.partners[+i-1]['社名'])}</a>`:'<span></span>'}${D.partners[+i+1]?`<a class="btn ghost" href="#partner-${+i+1}">${esc(D.partners[+i+1]['社名'])} →</a>`:''}</div></div></section>`};
+V.goods=()=>head('公式グッズ','試合会場・オンラインで購入できます')+`<section class="band"><div class="wrap"><p class="crumb"><a href="#support">応援・支援</a> ／ 公式グッズ</p>
+ <div class="cards">${D.goods.map(g=>`<div class="card">${imgU(g['画像URL'])?`<img src="${imgU(g['画像URL'])}" alt="${esc(g['商品名'])}" style="border-radius:8px;margin-bottom:10px;aspect-ratio:1/1;object-fit:contain;width:100%;background:#fff;border:1px solid var(--line)" onerror="this.remove()">`:`<div style="aspect-ratio:1/1;border-radius:8px;margin-bottom:10px;display:grid;place-items:center;background:var(--bg2);border:1px solid var(--line)">${imgU(D.cfg['部章URL'])?`<img src="${imgU(D.cfg['部章URL'])}" alt="" style="width:40%;opacity:.5">`:''}</div>`}<h3 style="margin-bottom:4px">${esc(g['商品名'])}</h3><b class="num" style="color:var(--g);font-size:18px">${esc(g['価格']||'')}</b>${hideTBD(g['説明'])?`<p class="mute small" style="margin:6px 0 0">${esc(g['説明'])}</p>`:''}${g['サイズ・素材']?`<p class="small" style="margin:6px 0 0"><span class="chip">サイズ・素材</span>${esc(g['サイズ・素材'])}</p>`:''}</div>`).join('')||'<p class="mute">グッズシートに商品を登録すると表示されます。</p>'}</div>
+ <h2 style="margin-top:32px">ご購入方法</h2>
+ <div class="cards"><div class="card"><h3>試合会場で</h3><p class="mute" style="margin:0">ホームゲームや部のイベント会場で販売しています。</p></div>
+ <div class="card"><h3>通販（メール）</h3><p class="mute" style="margin:0">お名前・郵便番号と住所・商品名と数量（Tシャツ・ジャージはサイズ，ジャージは背番号・名前の有無）を書いて下記へお送りください。代金は銀行振込で，送料はご負担いただきます。</p>${D.cfg['グッズ注文メール']?`<p style="margin:10px 0 0"><a class="btn gold" href="mailto:${esc(D.cfg['グッズ注文メール'])}?subject=${encodeURIComponent('グッズ購入希望')}">${esc(D.cfg['グッズ注文メール'])}</a></p>`:''}</div>
+ ${safeUrl(D.cfg['グッズ注文フォームURL'])?`<div class="card"><h3>申込フォーム</h3><p class="mute" style="margin:0">2026年のTシャツ・タオルはフォームから申し込めます。</p><p style="margin:10px 0 0"><a class="btn ghost" href="${safeUrl(D.cfg['グッズ注文フォームURL'])}" target="_blank" rel="noopener">フォームを開く →</a></p></div>`:''}</div></div></section>`;
+V.contact=()=>head('お問い合わせ','ご用件を選んでください')+`<section class="band"><div class="wrap" style="max-width:720px">
+ <form id="cf" class="card"><div class="field"><label for="ck">ご用件</label><select id="ck"><option>入部・練習見学</option><option>取材</option><option>協賛・ご寄付</option><option>グラウンド利用</option><option>その他</option></select></div>
+ <div class="field"><label for="cn">お名前</label><input id="cn" autocomplete="name"></div>
+ <div class="field"><label for="cm">メールアドレス</label><input id="cm" type="email" autocomplete="email"></div>
+ <div class="field"><label for="cb">内容</label><textarea id="cb" rows="5"></textarea></div>
+ <button class="btn green" type="submit">メールを作成する</button><p class="small mute" id="cmsg"></p></form>
+ <p class="small mute">送信ボタンを押すと，入力内容を書き込んだメールがお使いのメールソフトで開きます。メールアドレス：<a href="mailto:${esc(D.cfg['問い合わせメール']||'')}" style="color:var(--g)">${esc(D.cfg['問い合わせメール']||'')}</a></p></div></section>`;
+V.notfound=()=>head('ページが見つかりません')+`<section class="band"><div class="wrap"><a class="btn green" href="#home">トップへ</a></div></section>`;
+
+/* ---------- 管理（更新） ---------- */
+V.admin=()=>head('サイトの更新','入力シートを更新すると，サイトが書き換わります')+`<section class="band"><div class="wrap two">
+ <div><h2>更新の流れ</h2><ol class="steps">
+  <li><b>入力する</b>：Googleスプレッドシート（Excelでも可）の各シートに1行＝1件で書く。学生のリレー日記はGoogleフォームから投稿→「日記」シートに<b>下書き</b>で追加。</li>
+  <li><b>承認する</b>：広報・主務が内容を確認し「公開」列を<b>公開</b>に変える。</li>
+  <li><b>反映される</b>：公開サイトはスプレッドシートを読み込んで表示（本番は自動，試作では「入力シートを読み込む」で反映）。</li></ol>
+  <h2 style="margin-top:24px">承認待ち（下書き）</h2><div id="drafts"></div>
+  <h2 style="margin-top:24px">【要確認】のセル</h2><p class="small mute">公開ページでは【要確認】の文は表示しません。内容を確認してシートを直してください。</p><div id="tbd"></div>
+  <h2 style="margin-top:24px">リレー日記の投稿（フォームの試作）</h2>
+  <form id="df" class="adm"><div class="field"><label for="da">執筆者（部員から選ぶ）</label><select id="da" required>${D.members.map(m=>`<option value="${esc(m['部員ID'])}">${esc(m['氏名'])}（${gradeL(m['学年'])}）</option>`).join('')}</select></div>
+  <div class="field"><label for="dt">タイトル</label><input id="dt" required></div>
+  <div class="field"><label for="db">本文</label><textarea id="db" rows="5" required></textarea></div>
+  <div class="field"><label for="dn">次の走者</label><select id="dn"><option value="">（未定）</option>${D.members.map(m=>`<option value="${esc(m['部員ID'])}">${esc(m['氏名'])}（${gradeL(m['学年'])}）</option>`).join('')}</select></div>
+  <button class="btn green" type="submit">下書きとして投稿</button></form></div>
+ <div><h2>入力シートを読み込む</h2><div class="adm">
+  <div class="field"><label for="xf">Excelファイル（.xlsx）</label><input id="xf" type="file" accept=".xlsx,.xls"></div>
+  <p class="small mute">入力シートを編集して保存し，ここで選ぶとこの画面の表示が更新されます（この端末のブラウザにだけ保存）。</p>
+  <div class="field"><label for="gs">GoogleスプレッドシートのID（本番用）</label><input id="gs" placeholder="docs.google.com/spreadsheets/d/〈ここ〉/edit"></div>
+  <div class="btns"><button class="btn green" id="gsb" type="button">スプレッドシートから読み込む</button><button class="btn ghost" id="rs" type="button">初期データに戻す</button></div>
+  <div class="notice">試作ページの表示環境では外部への通信が制限されているため，スプレッドシートからの直接読み込みは本番サーバーに置いたときに動きます。今はExcelファイルの読み込みで確認してください。</div>
+  <div class="log" id="log">読み込み待ち</div></div>
+  <h2 style="margin-top:24px">シート一覧</h2><div class="scroll"><table class="stack"><thead><tr><th>シート</th><th class="r">公開</th><th class="r">下書き</th><th>担当（案）</th></tr></thead><tbody id="stb"></tbody></table></div></div>
+ </div></section>`;
+const OWN={'設定':'主務','お知らせ':'広報','試合':'主務・分析','試合スコア':'主務・分析','試合メンバー':'主務・分析','対戦校':'OB倶楽部・分析','相手メンバー':'主務・分析','部員':'主務','部員プロフィール':'部員本人（フォーム）→主務','部員ブログ':'自動（ブログから）','スタッフ':'主務','日記':'学生（フォーム）→広報','パートナー':'部長・OB倶楽部','歴代':'OB倶楽部','入部ガイド':'新歓担当','入部FAQ':'新歓担当'};
+function drawAdmin(){
+  const st=document.getElementById('stb');if(!st)return;
+  st.innerHTML=Object.keys(OWN).map(n=>{const rows=RAW[n]||[];const dr=rows.filter(r=>!pub(r)).length;return `<tr><td>${n}</td><td class="r num">${rows.length-dr}</td><td class="r num">${dr}</td><td>${OWN[n]}</td></tr>`}).join('');
+  const tb=[];Object.keys(RAW).forEach(n=>(RAW[n]||[]).forEach((r,i)=>Object.keys(r).forEach(k=>{if(/【要確認】/.test(String(r[k])))tb.push(`<li><b>${esc(n)}</b> ${i+2}行目「${esc(k)}」：${esc(String(r[k]).slice(0,60))}</li>`)})));
+  document.getElementById('tbd').innerHTML=tb.length?`<ul class="small" style="padding-left:1.2em">${tb.join('')}</ul>`:'<p class="mute">ありません。</p>';
+  const dz=document.getElementById('drafts');
+  dz.innerHTML=D.drafts.length?D.drafts.map(({sheet,r},i)=>`<div class="card" style="margin-bottom:8px"><span class="chip">${sheet}</span><b>${esc(r['タイトル'])}</b><div class="small mute">${r['執筆者ID']?auName(r):esc(r['投稿者']||'')} ${fd(r['投稿日時']||r['日付'])}</div><button class="btn ghost" data-i="${i}" style="margin-top:8px">公開にする（この画面だけ）</button></div>`).join(''):'<p class="mute">承認待ちはありません。</p>';
+  dz.querySelectorAll('button').forEach(b=>b.onclick=()=>{const d=D.drafts[+b.dataset.i];d.r['公開']='公開';commit('「'+d.r['タイトル']+'」を公開にしました');});
+  document.getElementById('df').onsubmit=e=>{e.preventDefault();const v=id=>document.getElementById(id).value.trim();
+    const now=new Date(),p=n=>String(n).padStart(2,'0');
+    (RAW['日記']=RAW['日記']||[]).push({'投稿日時':`${now.getFullYear()}-${p(now.getMonth()+1)}-${p(now.getDate())}T${p(now.getHours())}:${p(now.getMinutes())}`,'記事ID':'new'+Date.now(),'執筆者ID':v('da'),'タイトル':v('dt'),'本文':v('db'),'次の走者ID':v('dn'),'公開':'下書き'});
+    commit('下書きを追加しました（承認待ちに表示）');};
+  document.getElementById('xf').onchange=async e=>{const f=e.target.files[0];if(!f)return;const log=document.getElementById('log');
+    if(!(await needXLSX())){log.innerHTML='<span class="ng">読み込み用ライブラリを取得できませんでした（ネットワーク接続を確認してください）。</span>';return}
+    try{const wb=XLSX.read(await f.arrayBuffer(),{cellDates:true});load(fromWorkbook(wb),f.name)}catch(err){log.innerHTML='<span class="ng">読み込めませんでした：'+esc(err.message)+'</span>'}};
+  document.getElementById('gsb').onclick=async()=>{const id=document.getElementById('gs').value.trim().replace(/.*\/d\//,'').replace(/\/.*/,'');if(!(await needXLSX()))return;const log=document.getElementById('log');
+    if(!id){log.innerHTML='<span class="ng">IDを入力してください。</span>';return}
+    try{const r=await fetch(`https://docs.google.com/spreadsheets/d/${encodeURIComponent(id)}/export?format=xlsx`);if(!r.ok)throw new Error('HTTP '+r.status);
+      load(fromWorkbook(XLSX.read(await r.arrayBuffer(),{cellDates:true})),'Googleスプレッドシート')}catch(err){log.innerHTML='<span class="ng">取得できませんでした（'+esc(err.message)+'）。共有設定が「リンクを知っている全員」になっているか，本番サーバー上で開いているかを確認してください。</span>'}};
+  document.getElementById('rs').onclick=()=>{RAW=JSON.parse(JSON.stringify(DEFAULT));try{localStorage.removeItem('turfc-data')}catch(e){}D=model(RAW);render();document.getElementById('log').innerHTML='<span class="ok">初期データに戻しました。</span>'};
+}
+const pad=n=>String(n).padStart(2,'0');
+const needXLSX=()=>window.XLSX?Promise.resolve(true):new Promise(ok=>{const sc=document.createElement('script');sc.src='https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js';sc.onload=()=>ok(true);sc.onerror=()=>ok(false);document.head.appendChild(sc)});
+function cellVal(v){if(v instanceof Date){if(v.getFullYear()<1901)return `${pad(v.getHours())}:${pad(v.getMinutes())}`;const t=v.getHours()||v.getMinutes()?`T${pad(v.getHours())}:${pad(v.getMinutes())}`:'';return `${v.getFullYear()}-${pad(v.getMonth()+1)}-${pad(v.getDate())}${t}`}return v}
+function fromWorkbook(wb){const out={};wb.SheetNames.forEach(n=>{if(n==='使い方')return;out[n]=XLSX.utils.sheet_to_json(wb.Sheets[n],{defval:''}).map(r=>{const o={};for(const k in r)o[String(k).trim()]=cellVal(r[k]);return o}).filter(r=>Object.values(r).some(v=>String(v).trim()!==''))});return out}
+function load(raw,src){const msgs=[];
+  Object.keys(REQ).forEach(n=>{if(!raw[n]){msgs.push(`<span class="ng">「${n}」シートがありません</span>`);return}const bad=raw[n].map((r,i)=>ok(n,r)?0:i+2).filter(Boolean);msgs.push(bad.length?`<span class="ng">${n}：${bad.length}行に必須項目の空欄（${bad.slice(0,8).join(', ')}行目）→ 表示しません</span>`:`<span class="ok">${n}：${raw[n].length}行</span>`)});
+  RAW=raw;commit();const log=document.getElementById('log');if(log)log.innerHTML=`<b>${esc(src)}を読み込みました</b><br>`+msgs.join('<br>');}
+function commit(msg){try{localStorage.setItem('turfc-data',JSON.stringify({built:DEFAULT_PACKED.built,raw:RAW}))}catch(e){}D=model(RAW);const log=document.getElementById('log')?.innerHTML;render();if(log)document.getElementById('log').innerHTML=log;if(msg)document.getElementById('log').innerHTML=`<span class="ok">${esc(msg)}</span>`}
+
+/* ---------- 枠 ---------- */
+function chrome(cur){
+  const eu=imgU(D.cfg['部章URL']);if(eu)document.getElementById('emb').innerHTML=`<img src="${eu}" alt="部章">`;
+  document.getElementById('gnav').innerHTML=NAV.slice(1).map(([k,j])=>`<a href="#${k}" class="${cur===k?'on':''}">${j}</a>`).join('');
+  document.getElementById('dnav').innerHTML=NAV.map(([k,j,e])=>`<a href="#${k}">${j}<small>${e}</small></a>`).join('')+`<a href="#admin">サイトの更新<small>部員・スタッフ向け</small></a>`;
+  document.getElementById('fcols').innerHTML=[
+   ['試合・チーム',[['match','試合日程・結果'],['team','体制・部員紹介'],['history','歴史・歴代']]],
+   ['読む',[['stories','お知らせ'],['stories-diary','リレー日記'],['stories-voice','Voice・特集']]],
+   ['入部',[['join','入部希望の方へ'],['juken','受験生応援企画'],['contact','練習見学・お問い合わせ']]],
+   ['応援・支援',[['partners','オフィシャルパートナー'],['goods','公式グッズ'],['admin','サイトの更新（部員向け）']]]].map(([h,l])=>`<div><h4>${h}</h4>${l.map(([k,t])=>`<a href="#${k}">${t}</a>`).join('')}</div>`).join('')
+   +`<div><h4>SNS</h4>${[['X',D.cfg['X']],['Facebook',D.cfg['Facebook']],['新歓 X',D.cfg['新歓X']],['新歓 Instagram',D.cfg['新歓Instagram']]].filter(([,u])=>safeUrl(u)).map(([t,u])=>`<a href="${safeUrl(u)}" target="_blank" rel="noopener">${t} ↗</a>`).join('')}${safeUrl(D.cfg['OB倶楽部URL'])?`<a href="${safeUrl(D.cfg['OB倶楽部URL'])}"${extA(D.cfg['OB倶楽部URL'])}>OB倶楽部 会員サイト ↗</a>`:''}</div>`;
+  document.getElementById('faddr').textContent=(D.cfg['住所']||'')+'　'+(D.cfg['最寄り駅']||'');
+  document.getElementById('fy').textContent=new Date().getFullYear();
+}
+function render(){
+  const h=(location.hash||'#home').slice(1);let html,cur=h.split('-')[0];
+  if(h==='home'||h==='')html=V.home(),cur='home';
+  else if(h.startsWith('match-'))html=V.matchDetail(h.slice(6)),cur='match';
+  else if(h.startsWith('comp-'))html=V.comp(h.slice(5)),cur='match';
+  else if(h.startsWith('season-'))html=V.match(h.slice(7)),cur='match';
+  else if(h.startsWith('player-'))html=V.player(h.slice(7)),cur='team';
+  else if(h.startsWith('news-'))html=V.news(h.slice(5)),cur='stories';
+  else if(h.startsWith('diary-'))html=V.diary(h.slice(6)),cur='stories';
+  else if(h==='stories-diary')html=V.stories('diary'),cur='stories';
+  else if(h==='stories-voice')html=V.stories('voice'),cur='stories';
+  else if(h.startsWith('partner-'))html=V.partner(h.slice(8)),cur='support';
+  else if(h==='partners')html=V.partners(),cur='support';
+  else if(h==='juken')html=V.juken(),cur='join';
+  else if(h==='goods')html=V.goods(),cur='support';
+  else if(h.startsWith('voice-'))html=V.voice(h.slice(6)),cur='stories';
+  else if(V[h])html=V[h]();else html=V.notfound();
+  document.getElementById('app').innerHTML=html;chrome(cur);
+  document.querySelectorAll('table.stack').forEach(t=>{const hs=[...t.querySelectorAll('thead th')].map(x=>x.textContent);t.querySelectorAll('tbody tr').forEach(tr=>[...tr.children].forEach((td,i)=>{if(!td.dataset.l&&hs[i])td.dataset.l=hs[i]}))});
+  const h1=document.querySelector('#app h1');document.title=(h==='home'||h===''?'':(h1?h1.textContent.trim()+'｜':''))+(D.cfg['部名']||'東京大学運動会ラグビー部');
+  drawMembers();drawHist();drawAdmin();
+  const cf=document.getElementById('cf');if(cf)cf.onsubmit=e=>{e.preventDefault();const v=id=>document.getElementById(id).value.trim();if(!v('cn')||!v('cb')){document.getElementById('cmsg').textContent='お名前と内容を入力してください。';return}const to=D.cfg['問い合わせメール']||'';location.href=`mailto:${to}?subject=${encodeURIComponent('【'+v('ck')+'】ホームページからのお問い合わせ')}&body=${encodeURIComponent(`お名前：${v('cn')}\nメール：${v('cm')}\nご用件：${v('ck')}\n\n${v('cb')}`)}`;document.getElementById('cmsg').textContent='メールソフトが開きます。開かない場合は '+to+' へ直接お送りください。'};
+}
+const dr=document.getElementById('drawer'),mb=document.getElementById('menuBtn');
+const setD=o=>{dr.classList.toggle('open',o);mb.setAttribute('aria-expanded',o)};
+mb.onclick=()=>setD(true);document.getElementById('shade').onclick=()=>setD(false);document.getElementById('closeBtn').onclick=()=>setD(false);
+addEventListener('hashchange',()=>{setD(false);render();scrollTo(0,0)});
+addEventListener('keydown',e=>{if(e.key==='Escape')setD(false)});
+D=model(RAW);render();
+}
+</script>
+</body>
+</html>
